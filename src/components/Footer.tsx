@@ -301,13 +301,13 @@ const Footer = (props: any) => {
                 </Grid>
               </Grid>
               <Grid item>
-                <BccButton
+                {/* <BccButton
                   className={classes.footBtn}
                   variant="outlined"
                   color="primary"
                 >
                   {t("footer.sms")}
-                </BccButton>
+                </BccButton> */}
               </Grid>
             </Grid>
           </Grid>
