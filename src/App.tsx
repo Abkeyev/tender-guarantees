@@ -5,15 +5,25 @@ import {
   Benefits,
   Order,
   Additional,
+  Sale,
   Useful,
   Footer,
 } from "./components";
 import "./App.css";
+import { useTranslation } from "react-i18next";
 
 function App() {
+  const { t, i18n } = useTranslation();
+  const [lang, setLang] = React.useState(i18n.language ? i18n.language : "ru");
+
+  const handleLangChange = (lang: string) => {
+    setLang(lang);
+    i18n.changeLanguage(lang);
+  };
   return (
     <div>
-      <Banner />
+      <Banner lang={lang} changeLang={handleLangChange} />
+      <Sale />
       <Online />
       <Benefits />
       <Order />

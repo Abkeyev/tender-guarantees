@@ -3,6 +3,7 @@ import { Grid } from "@material-ui/core";
 import { BccTypography, BccLink, BccButton } from "./BccComponents";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -210,6 +211,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Footer = (props: any) => {
   const classes = useStyles({});
+  const { t } = useTranslation();
 
   const openBtn = () => {};
 
@@ -235,7 +237,7 @@ const Footer = (props: any) => {
                   </Grid>
                   <Grid item>
                     <a href="#" target="_blank" className={classes.footLink}>
-                      <span>505</span> Бесплатно с мобильного
+                      <span>605</span> {t("footer.freemob")}
                     </a>
                   </Grid>
                 </Grid>
@@ -250,7 +252,7 @@ const Footer = (props: any) => {
                   </Grid>
                   <Grid item>
                     <a href="#" target="_blank" className={classes.footLink}>
-                      <span>+7 727 244-30-30</span>
+                      <span>8(727)244-30-44</span>
                     </a>
                   </Grid>
                 </Grid>
@@ -304,7 +306,7 @@ const Footer = (props: any) => {
                   variant="outlined"
                   color="primary"
                 >
-                  Отправить сообщение
+                  {t("footer.sms")}
                 </BccButton>
               </Grid>
             </Grid>
@@ -318,48 +320,48 @@ const Footer = (props: any) => {
             >
               <Grid item>
                 <a href="#" target="_blank">
-                  О банке
+                  {t("footer.about")}
                 </a>
                 <a href="#" target="_blank">
-                  Акции
+                  {t("footer.sale")}
                 </a>
                 <a href="#" target="_blank">
-                  Тарифы
+                  {t("footer.tarif")}
                 </a>
                 <a href="#" target="_blank">
-                  Вакансии
+                  {t("footer.vacancy")}
                 </a>
                 <a href="#" target="_blank">
-                  Реквизиты
+                  {t("footer.requisites")}
                 </a>
                 <a href="#" target="_blank">
-                  Залоговая база
+                  {t("footer.base")}
                 </a>
                 <a href="#" target="_blank">
-                  Сборник форм договоров
+                  {t("footer.compilation")}
                 </a>
               </Grid>
               <Grid item>
                 <a href="#" target="_blank">
-                  Пресс-служба
+                  {t("footer.press")}
                 </a>
                 <a href="#" target="_blank">
-                  Вопросы-ответы
+                  {t("footer.qa")}
                 </a>
                 <a href="#" target="_blank">
-                  Центр обслуживания вызовов
+                  {t("footer.center")}
                 </a>
                 <a href="#" target="_blank">
-                  Косплаенс–контроль
+                  {t("footer.control")}
                 </a>
                 <a href="#" target="_blank">
-                  Информация для инвесторов
+                  {t("footer.invest")}
                 </a>
                 <a href="#" target="_blank">
-                  Информация акционерам
+                  {t("footer.info")}
                 </a>
                 <a href="#" target="_blank">
-                  Правила об общих условиях проведения операций
+                  {t("footer.right")}
                 </a>
               </Grid>
             </Grid>
@@ -375,7 +377,7 @@ const Footer = (props: any) => {
           <Grid item className={classes.footerOne}>
             <Grid container>
               <Grid item className={classes.mobileTitle}>
-                Мобильное приложение
+                {t("footer.mobile")}
               </Grid>
               <Grid item className={classes.appLinks}>
                 <a
@@ -394,10 +396,7 @@ const Footer = (props: any) => {
             </Grid>
           </Grid>
           <Grid item className={classes.footerTwo}>
-            <div className={classes.footLicen}>
-              Лицензия на проведение банковских и иных операций и деятельности
-              на рынке ценных бумаг №1.2.25/195/34 от 28.01.2015 выданная НБ РК.
-            </div>
+            <div className={classes.footLicen}>{t("footer.lic")}</div>
           </Grid>
         </Grid>
       </div>

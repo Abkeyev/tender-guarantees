@@ -9,6 +9,7 @@ import {
 } from "./BccComponents";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import ReactGA from "react-ga";
+import { useTranslation } from "react-i18next";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,12 +33,19 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       tabs: {
         marginTop: 40,
-        minHeight: 150,
-        backgroundImage: 'unset !important',
-        color: "#000D1A",
         fontSize: 16,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "right",
+        backgroundSize: "contain",
         "& > span": {
           color: "#27AE60",
+        },
+        "& > div > div": {
+          width: "calc(50% - 15px)",
+          "& > img": {
+            width: "100%",
+            maxHeight: 250,
+          },
         },
       },
       tab: {
@@ -76,13 +84,20 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       tabs: {
         marginTop: 40,
-        minHeight: 150,
+        minHeight: 350,
         fontSize: 16,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "right",
         backgroundSize: "contain",
         "& > span": {
           color: "#27AE60",
+        },
+        "& > div > div": {
+          width: "calc(50% - 15px)",
+          "& > img": {
+            width: "100%",
+            maxHeight: 250,
+          },
         },
       },
       tab: {
@@ -103,72 +118,51 @@ const useStyles = makeStyles((theme: Theme) =>
           },
         },
       },
+      link: {
+        textDecoration: "none",
+      },
     },
   })
 );
 
 const items = [
   {
-    title: "Валютные счета",
-    img: "/u1.png",
-    content: [
-      "Бесплатое открытие и ведение счета",
-      "Удаленное управление счетомн",
-      "Онлайн-конвертация валют по биржевому курсу в режиме реального времени",
-      "Онлайн присвоение учетного номера контракта",
-    ],
+    img: "/u1.svg",
+    content: [1, 2, 3, 4, 5, 6],
+    url: "https://www.bcc.kz/product/currency-control/",
   },
   {
-    title: "Дистанционное обслуживание",
-    img: "/u2.png",
-    content: [
-      "Бесплатое открытие и ведение счета",
-      "Удаленное управление счетомн",
-      "Онлайн-конвертация валют по биржевому курсу в режиме реального времени",
-      "Онлайн присвоение учетного номера контракта",
-    ],
+    img: "/u2.svg",
+    content: [1, 2, 3, 4],
+    url: "https://www.bcc.kz/product/system-internet-banking_yur/",
   },
   {
-    title: "Онлайн выпуск тендерных гарантий",
-    img: "/u3.png",
-    content: [
-      "Бесплатое открытие и ведение счета",
-      "Удаленное управление счетомн",
-      "Онлайн-конвертация валют по биржевому курсу в режиме реального времени",
-      "Онлайн присвоение учетного номера контракта",
-    ],
+    img: "/u3.svg",
+    content: [[0, 1, 2], 2, 3, 4, 5, 6],
+    url: "https://www.bcc.kz/product/overdraft/",
   },
   {
-    title: "Зарплатный проект",
-    img: "/u4.png",
-    content: [
-      "Бесплатое открытие и ведение счета",
-      "Удаленное управление счетомн",
-      "Онлайн-конвертация валют по биржевому курсу в режиме реального времени",
-      "Онлайн присвоение учетного номера контракта",
-    ],
+    img: "/u4.svg",
+    content: [1, 2, 3, 4, 5, 6],
+    url: "https://www.bcc.kz/product/tender-guarantees/",
   },
   {
-    title: "Онлайн-конвертация валют",
-    img: "/u5.png",
-    content: [
-      "Бесплатое открытие и ведение счета",
-      "Удаленное управление счетомн",
-      "Онлайн-конвертация валют по биржевому курсу в режиме реального времени",
-      "Онлайн присвоение учетного номера контракта",
-    ],
+    img: "/u5.svg",
+    content: [1, 2, 3, 4],
+    url: "https://www.bcc.kz/product/salary-project/",
   },
 ];
 
 const Useful = (props: any) => {
   const classes = useStyles({});
   const [index, setIndex] = React.useState(0);
+  const { t } = useTranslation();
 
   return (
     <div className={classes.container}>
       <div className={classes.innerContainer}>
         <BccTypography type="h2" block className={classes.title}>
-          Вместе со счетом вам станут доступны
+          {t("useful.title")}
         </BccTypography>
 
         <BccTabs
@@ -177,30 +171,46 @@ const Useful = (props: any) => {
           className={classes.tab}
         >
           {items &&
-            items.map((item: any) => {
-              return <BccTab label={item.title} />;
+            items.map((item: any, i: number) => {
+              return <BccTab label={t(`useful.${i + 1}`)} />;
             })}
         </BccTabs>
-        <div
-          className={classes.tabs}
-          style={{
-            backgroundImage: `url(${process.env.PUBLIC_URL +
-              items[index].img})`,
-          }}
-        >
-          {items[index].content.map((c: string) => (
-            <>
-              <span>•</span> {c}
-              <br />
-              <br />
-            </>
-          ))}
-          <BccButton
-            style={{ textTransform: "capitalize", padding: 0 }}
-            variant="text"
-          >
-            Подробнее
-          </BccButton>
+        <div className={classes.tabs}>
+          <Grid container justify="space-between" wrap="nowrap">
+            <Grid item>
+              {items[index].content.map((c: any, ind: number) => {
+                return c.length > 1 ? (
+                  c.map((cc: any, ii: number) => {
+                    t(`useful.${index + 1}text${c}${ii}`);
+                  })
+                ) : (
+                  <>
+                    <span>•</span> {t(`useful.${index + 1}text${c}`)}
+                    <br />
+                    <br />
+                  </>
+                );
+              })}
+              <BccLink
+                href={items[index].url}
+                target="_blank"
+                className={classes.link}
+              >
+                <BccButton
+                  style={{
+                    textTransform: "capitalize",
+                    padding: 0,
+                  }}
+                  variant="text"
+                >
+                  {t("useful.more")}
+                </BccButton>
+              </BccLink>
+            </Grid>
+            <Grid item>
+              <img src={`${process.env.PUBLIC_URL + items[index].img}`} />
+            </Grid>
+          </Grid>
         </div>
       </div>
     </div>
