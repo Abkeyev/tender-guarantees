@@ -3,8 +3,7 @@ import {
   Banner,
   Online,
   Benefits,
-  Order,
-  Additional,
+  CallUs,
   Sale,
   Useful,
   Footer,
@@ -36,9 +35,9 @@ function App() {
         changeLang={handleLangChange}
       />
       <Sale lang={lang} />
-      <Online />
+      <Online refProp={orderRef} />
       <Benefits />
-      <Order refProp={orderRef} />
+      <CallUs />
       <Useful />
       <Footer />
     </div>

@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       inputStyle: {
         marginBottom: 30,
-        textAlign: 'left'
+        textAlign: "left",
       },
       checkboxText: {
         alignItems: "flex-start",
@@ -143,7 +143,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       inputStyle: {
         marginBottom: 30,
-        textAlign: 'left'
+        textAlign: "left",
       },
       checkboxText: {
         alignItems: "center",
@@ -214,7 +214,7 @@ const Order = (props: any) => {
   const [agree, setAgree] = React.useState<boolean>(true);
 
   const isValid = () => {
-    console.log(phone.replace("_", "").length)
+    console.log(phone.replace("_", "").length);
     return (
       fio.length > 1 &&
       city.length > 1 &&
@@ -224,7 +224,7 @@ const Order = (props: any) => {
   };
 
   return (
-    <div className={classes.container} ref={props.refProp}>
+    <div className={classes.container}>
       <div className={classes.orderForm}>
         <Grid direction="column" container className={classes.innerOrderForm}>
           <Grid item>
@@ -249,7 +249,7 @@ const Order = (props: any) => {
             <BccInput
               className={classes.inputStyle}
               fullWidth
-              label={t("order.fio") + '*'}
+              label={t("order.fio") + "*"}
               variant="filled"
               id="fio"
               name="fio"
@@ -261,7 +261,7 @@ const Order = (props: any) => {
             <BccInput
               variant="filled"
               fullWidth
-              label={t("order.phone") + '*'}
+              label={t("order.phone") + "*"}
               onChange={(e: any) => setPhone(e.target.value)}
               className={classes.inputStyle}
               id="phone"
@@ -279,7 +279,7 @@ const Order = (props: any) => {
             <BccInput
               fullWidth={true}
               className={classes.inputStyle}
-              label={t("order.city") + '*'}
+              label={t("order.city") + "*"}
               id="city"
               name="city"
               value={city}
@@ -291,11 +291,7 @@ const Order = (props: any) => {
               {cities.map((c: string) => {
                 return (
                   c !== null && (
-                    <MenuItem
-                      className={classes.cityTitle}
-                      key={c}
-                      value={c}
-                    >
+                    <MenuItem className={classes.cityTitle} key={c} value={c}>
                       {c}
                     </MenuItem>
                   )
@@ -313,7 +309,9 @@ const Order = (props: any) => {
               value={iin}
               helperText={phoneError ? t("order.phone_error") : ""}
               error={phoneError ? true : false}
-              onChange={(e: any) => setIin(e.target.value.replace(/\D/g, "").substr(0, 12))}
+              onChange={(e: any) =>
+                setIin(e.target.value.replace(/\D/g, "").substr(0, 12))
+              }
               variant="outlined"
               margin="normal"
             />
@@ -370,8 +368,12 @@ const Order = (props: any) => {
                 </Grid>
               </Grid>
               <Grid item className={classes.btnWrap}>
-                <BccButton variant="contained" disabled={!isValid()} color="primary">
-                  {t('order.send')}
+                <BccButton
+                  variant="contained"
+                  disabled={!isValid()}
+                  color="primary"
+                >
+                  {t("order.send")}
                 </BccButton>
               </Grid>
             </Grid>

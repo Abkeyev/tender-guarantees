@@ -6,4 +6,5 @@ export { default as Order } from "./Order";
 export { default as Additional } from "./Additional";
 export { default as Useful } from "./Useful";
 export { default as Sale } from "./Sale";
+export { default as CallUs } from "./CallUs";
 export { default as Footer } from "./Footer";

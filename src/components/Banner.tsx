@@ -119,6 +119,11 @@ const useStyles = makeStyles((theme: Theme) =>
         },
       },
     },
+    link: {
+      color: "#249052",
+      textDecoration: "underline",
+      cursor: "pointer",
+    },
   })
 );
 
@@ -130,6 +135,36 @@ const Banner = (props: any) => {
 
   const handleLangChange = (lang: any) => {
     props.changeLang(lang);
+  };
+
+  const onClickAppStore = (e: any) => {
+    e.preventDefault();
+    ReactGA.event({
+      category: "1button_starbusiness_calltoaction",
+      action: "starbusiness_calltoaction",
+    });
+    window.open("http://onelink.to/bkyvu8", "_blank");
+  };
+
+  const goToOnline = (e: any) => {
+    e.preventDefault();
+    ReactGA.event({
+      category: "1button_open_account_online_calltoaction",
+      action: "Open_account_online_calltoaction",
+    });
+    props.scrollToOrder();
+  };
+
+  const onClickIB = (e: any) => {
+    e.preventDefault();
+    ReactGA.event({
+      category: "1button_internetbanking_calltoaction",
+      action: "interbanking_calltoaction",
+    });
+    window.open(
+      "https://www.bcc.kz/product/system-internet-banking_yur/",
+      "_blank"
+    );
   };
 
   return (
@@ -174,9 +209,12 @@ const Banner = (props: any) => {
                   </BccTypography>
                   <BccTypography type="p2" block>
                     {t("banner.block1_1")}{" "}
-                    <BccLink href="http://onelink.to/bkyvu8" target="_blank">
+                    <span
+                      className={classes.link}
+                      onClick={(e: any) => onClickAppStore(e)}
+                    >
                       {t("banner.block1_2")}
-                    </BccLink>
+                    </span>
                   </BccTypography>
                 </>
               ) : (
@@ -190,9 +228,12 @@ const Banner = (props: any) => {
                     {t("banner.block1")}
                   </BccTypography>
                   <BccTypography type="p2" block>
-                    <BccLink href="http://onelink.to/bkyvu8" target="_blank">
+                    <span
+                      className={classes.link}
+                      onClick={(e: any) => onClickAppStore(e)}
+                    >
                       {t("banner.block1_1")}
-                    </BccLink>{" "}
+                    </span>{" "}
                     {t("banner.block1_2")}
                   </BccTypography>
                 </>
@@ -211,21 +252,21 @@ const Banner = (props: any) => {
                 {props.lang === "ru" ? (
                   <>
                     {t("banner.block2_1")}{" "}
-                    <BccLink
-                      href="https://www.bcc.kz/product/system-internet-banking_yur/"
-                      target="_blank"
+                    <span
+                      className={classes.link}
+                      onClick={(e) => onClickIB(e)}
                     >
                       {t("banner.block2_2")}
-                    </BccLink>
+                    </span>
                   </>
                 ) : (
                   <>
-                    <BccLink
-                      href="https://www.bcc.kz/product/system-internet-banking_yur/"
-                      target="_blank"
+                    <span
+                      className={classes.link}
+                      onClick={(e) => onClickIB(e)}
                     >
                       {t("banner.block2_1")}
-                    </BccLink>{" "}
+                    </span>{" "}
                     {t("banner.block2_2")}
                   </>
                 )}
@@ -236,7 +277,7 @@ const Banner = (props: any) => {
             className={classes.openBtn}
             variant="contained"
             color="primary"
-            onClick={() => props.scrollToOrder()}
+            onClick={(e: any) => goToOnline(e)}
           >
             {t("banner.button")}
           </BccButton>

@@ -238,6 +238,11 @@ const useStyles = makeStyles((theme: Theme) =>
         transition: "all 1s ease-in",
       },
     },
+    link: {
+      color: "#249052",
+      textDecoration: "underline",
+      cursor: "pointer",
+    },
   })
 );
 
@@ -260,6 +265,40 @@ const Banner = (props: any) => {
 
   const handleReset = () => {
     setActiveStep(1);
+  };
+
+  const onClickAS = (e: any, isIP: boolean) => {
+    e.preventDefault();
+    isIP
+      ? ReactGA.event({
+          category: "IP_Starbusiness_downloawd_AppStore",
+          action: "IP_starbusiness_appstore",
+        })
+      : ReactGA.event({
+          category: "LE_Starbusiness_downloawd_AppStore",
+          action: "LE_starbusiness_appstore",
+        });
+    window.open(
+      "https://apps.apple.com/kz/app/starbusiness/id1452748006",
+      "_blank"
+    );
+  };
+
+  const onClickGP = (e: any, isIP: boolean) => {
+    e.preventDefault();
+    isIP
+      ? ReactGA.event({
+          category: "IP_Starbusiness_downloawd_GooglePlay",
+          action: "IP_starbusiness_googleplay",
+        })
+      : ReactGA.event({
+          category: "LE_Starbusiness_downloawd_GooglePlay",
+          action: "LE_starbusiness_googleplay",
+        });
+    window.open(
+      "https://play.google.com/store/apps/details?id=bcc.sapphire&hl=ru",
+      "_blank"
+    );
   };
 
   function getStepContent(stepIndex: number) {
@@ -301,18 +340,18 @@ const Banner = (props: any) => {
                   wrap="nowrap"
                 >
                   <Grid item className={classes.mobileLinks}>
-                    <a
-                      href="https://apps.apple.com/kz/app/starbusiness/id1452748006"
-                      target="_blank"
+                    <span
+                      className={classes.link}
+                      onClick={(e: any) => onClickAS(e, true)}
                     >
                       <img src={process.env.PUBLIC_URL + "/as.svg"} />
-                    </a>
-                    <a
-                      href="https://play.google.com/store/apps/details?id=bcc.sapphire&hl=ru"
-                      target="_blank"
+                    </span>
+                    <span
+                      className={classes.link}
+                      onClick={(e: any) => onClickGP(e, true)}
                     >
                       <img src={process.env.PUBLIC_URL + "/gp.svg"} />
-                    </a>
+                    </span>
                   </Grid>
                   <Grid item className={classes.qr}>
                     <img src={process.env.PUBLIC_URL + "/qr.svg"} />
@@ -454,18 +493,18 @@ const Banner = (props: any) => {
                   wrap="nowrap"
                 >
                   <Grid item className={classes.mobileLinks}>
-                    <a
-                      href="https://apps.apple.com/kz/app/starbusiness/id1452748006"
-                      target="_blank"
+                    <span
+                      className={classes.link}
+                      onClick={(e: any) => onClickAS(e, false)}
                     >
                       <img src={process.env.PUBLIC_URL + "/as.svg"} />
-                    </a>
-                    <a
-                      href="https://play.google.com/store/apps/details?id=bcc.sapphire&hl=ru"
-                      target="_blank"
+                    </span>
+                    <span
+                      className={classes.link}
+                      onClick={(e: any) => onClickGP(e, false)}
                     >
                       <img src={process.env.PUBLIC_URL + "/gp.svg"} />
-                    </a>
+                    </span>
                   </Grid>
                   <Grid item className={classes.qr}>
                     <img src={process.env.PUBLIC_URL + "/qr.svg"} />
@@ -596,32 +635,8 @@ const Banner = (props: any) => {
     }
   }
 
-  const onClickAppStore = () => {
-    ReactGA.event({
-      category: "BccCard_AppStore_download",
-      action: "AppStore_download",
-    });
-
-    window.open(
-      "https://apps.apple.com/kz/app/starbusiness/id1452748006",
-      "_blank"
-    );
-  };
-
-  const onClickGooglePlay = () => {
-    ReactGA.event({
-      category: "BccCard_GooglePlay_download",
-      action: "GooglePlay_download",
-    });
-
-    window.open(
-      "https://play.google.com/store/apps/details?id=bcc.sapphire&hl=ru",
-      "_blank"
-    );
-  };
-
   return (
-    <div className={classes.container}>
+    <div className={classes.container} ref={props.refProp}>
       <BccTypography type="h2" block className={classes.title}>
         {t("online.title")}
       </BccTypography>
