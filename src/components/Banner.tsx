@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
       container: {
-        background: `url(${process.env.PUBLIC_URL + "/banner.svg"}) no-repeat`,
+        background: `url(${process.env.PUBLIC_URL + "/banner.jpeg"}) no-repeat`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       },
@@ -61,7 +61,6 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       select: {
         position: "absolute",
-        opacity: 0.5,
         right: 20,
         top: 50,
         color: "#141414",
@@ -75,10 +74,12 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     [theme.breakpoints.between("md", "xl")]: {
       container: {
-        background: `url(${process.env.PUBLIC_URL + "/banner.svg"}) no-repeat`,
+        background: `url(${process.env.PUBLIC_URL + "/banner.jpeg"}) no-repeat`,
         backgroundSize: "contain",
         backgroundPosition: "right",
-        backgroundColor: "#f3f6f8",
+      },
+      containerOut: {
+        background: "linear-gradient(to top, #f3f3f2, #f0f0ee)",
       },
       innerContainer: {
         maxWidth: 1280,
@@ -107,7 +108,6 @@ const useStyles = makeStyles((theme: Theme) =>
       openBtn: { minWidth: 300, fontSize: 18, fontWeight: "bold" },
       select: {
         position: "absolute",
-        opacity: 0.5,
         right: 0,
         top: 10,
         color: "#141414",
@@ -133,74 +133,114 @@ const Banner = (props: any) => {
   };
 
   return (
-    <div className={classes.container}>
-      <div className={classes.innerContainer}>
-        <Select
-          className={classes.select}
-          value={props.lang}
-          onChange={(e: any) => handleLangChange(e.target.value)}
-          inputProps={{
-            classes: {
-              icon: classes.icon,
-            },
-          }}
-        >
-          <MenuItem value="ru">РУС</MenuItem>
-          <MenuItem value="kz">КАЗ</MenuItem>
-        </Select>
-        <BccTypography type="h1" block className={classes.title}>
-          {t("banner.title")}
-        </BccTypography>
-        <BccTypography
-          type="h3"
-          weight="normal"
-          block
-          className={classes.subTitle}
-        >
-          {t("banner.title_desc")}
-        </BccTypography>
-        <Grid container direction="row" className={classes.block}>
-          <Grid item className={classes.firstBlock}>
-            <BccTypography
-              type="h4"
-              weight="bold"
-              block
-              className={classes.blockText}
-            >
-              {t("banner.block1")}
-            </BccTypography>
-            <BccTypography type="p2" block>
-              {t("banner.block1_1")}{" "}
-              <BccLink href="https://www.bcc.kz/" target="_blank">
-                {t("banner.block1_2")}
-              </BccLink>
-            </BccTypography>
+    <div className={classes.containerOut}>
+      <div className={classes.container}>
+        <div className={classes.innerContainer}>
+          <Select
+            className={classes.select}
+            value={props.lang}
+            onChange={(e: any) => handleLangChange(e.target.value)}
+            inputProps={{
+              classes: {
+                icon: classes.icon,
+              },
+            }}
+          >
+            <MenuItem value="ru">РУС</MenuItem>
+            <MenuItem value="kz">КАЗ</MenuItem>
+          </Select>
+          <BccTypography type="h1" block className={classes.title}>
+            {t("banner.title")}
+          </BccTypography>
+          <BccTypography
+            type="h3"
+            weight="normal"
+            block
+            className={classes.subTitle}
+          >
+            {t("banner.title_desc")}
+          </BccTypography>
+          <Grid container direction="row" className={classes.block}>
+            <Grid item className={classes.firstBlock}>
+              {props.lang === "ru" ? (
+                <>
+                  <BccTypography
+                    type="h4"
+                    weight="bold"
+                    block
+                    className={classes.blockText}
+                  >
+                    {t("banner.block1")}
+                  </BccTypography>
+                  <BccTypography type="p2" block>
+                    {t("banner.block1_1")}{" "}
+                    <BccLink href="http://onelink.to/bkyvu8" target="_blank">
+                      {t("banner.block1_2")}
+                    </BccLink>
+                  </BccTypography>
+                </>
+              ) : (
+                <>
+                  <BccTypography
+                    type="h4"
+                    weight="bold"
+                    block
+                    className={classes.blockText}
+                  >
+                    {t("banner.block1")}
+                  </BccTypography>
+                  <BccTypography type="p2" block>
+                    <BccLink href="http://onelink.to/bkyvu8" target="_blank">
+                      {t("banner.block1_1")}
+                    </BccLink>{" "}
+                    {t("banner.block1_2")}
+                  </BccTypography>
+                </>
+              )}
+            </Grid>
+            <Grid item>
+              <BccTypography
+                type="h4"
+                weight="bold"
+                block
+                className={classes.blockText}
+              >
+                {t("banner.block1")}
+              </BccTypography>
+              <BccTypography type="p2" block>
+                {props.lang === "ru" ? (
+                  <>
+                    {t("banner.block2_1")}{" "}
+                    <BccLink
+                      href="https://www.bcc.kz/product/system-internet-banking_yur/"
+                      target="_blank"
+                    >
+                      {t("banner.block2_2")}
+                    </BccLink>
+                  </>
+                ) : (
+                  <>
+                    <BccLink
+                      href="https://www.bcc.kz/product/system-internet-banking_yur/"
+                      target="_blank"
+                    >
+                      {t("banner.block2_1")}
+                    </BccLink>{" "}
+                    {t("banner.block2_2")}
+                  </>
+                )}
+              </BccTypography>
+            </Grid>
           </Grid>
-          <Grid item>
-            <BccTypography
-              type="h4"
-              weight="bold"
-              block
-              className={classes.blockText}
-            >
-              {t("banner.block1")}
-            </BccTypography>
-            <BccTypography type="p2" block>
-              {t("banner.block2_1")}{" "}
-              <BccLink href="https://www.bcc.kz/" target="_blank">
-                {t("banner.block2_2")}
-              </BccLink>
-            </BccTypography>
-          </Grid>
-        </Grid>
-        <BccButton
-          className={classes.openBtn}
-          variant="contained"
-          color="primary"
-          onClick={() => openBtn()}
-        >
-          {t("banner.button")}
-        </BccButton>
+          <BccButton
+            className={classes.openBtn}
+            variant="contained"
+            color="primary"
+            onClick={() => props.scrollToOrder()}
+          >
+            {t("banner.button")}
+          </BccButton>
+        </div>
       </div>
     </div>
   );

@@ -224,6 +224,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       backButton: {
         minWidth: 250,
+        textTransform: "capitalize!important",
       },
       nextBtn: {
         minWidth: 250,

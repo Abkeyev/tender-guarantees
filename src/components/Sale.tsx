@@ -183,7 +183,11 @@ const Sale = (props: any) => {
               {t("sale.part5")} - <span>{t("sale.0tg")}</span>
             </BccTypography>
             <BccLink
-              href="https://www.bcc.kz/aktsii/aktsiya-5-0-v-vashu-polzu-/"
+              href={
+                props.lang === "ru"
+                  ? "https://www.bcc.kz/aktsii/aktsiya-5-0-v-vashu-polzu-/"
+                  : "https://www.bcc.kz/kz/aktsii/aktsiya-5-0-v-vashu-polzu-/"
+              }
               target="_blank"
               className={classes.link}
             >

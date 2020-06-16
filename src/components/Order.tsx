@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid, MenuItem, FormControlLabel } from "@material-ui/core";
 import {
   BccTypography,
   BccCheckbox,
@@ -82,6 +82,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       inputStyle: {
         marginBottom: 30,
+        textAlign: 'left'
       },
       checkboxText: {
         alignItems: "flex-start",
@@ -142,6 +143,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       inputStyle: {
         marginBottom: 30,
+        textAlign: 'left'
       },
       checkboxText: {
         alignItems: "center",
@@ -178,6 +180,28 @@ const BccMaskedInput = (props: TextMaskCustomProps) => {
   );
 };
 
+const cities = [
+  "Актау",
+  "Актобе",
+  "Алматы",
+  "Атырау",
+  "Жезказган",
+  "Караганда",
+  "Кокшетау",
+  "Костанай",
+  "Кызылорда",
+  "Нур-Султан",
+  "Павлодар",
+  "Петропавловск",
+  "Семей",
+  "Талдыкорган",
+  "Тараз",
+  "Туркестанская область",
+  "Уральск",
+  "Усть-Каменогорск",
+  "Шымкент",
+];
+
 const Order = (props: any) => {
   const classes = useStyles({});
   const { t } = useTranslation();
@@ -185,9 +209,22 @@ const Order = (props: any) => {
   const [phone, setPhone] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [iin, setIin] = React.useState("");
+  const [city, setCity] = React.useState("");
+  const [phoneError, setPhoneError] = React.useState<boolean>(false);
+  const [agree, setAgree] = React.useState<boolean>(true);
+
+  const isValid = () => {
+    console.log(phone.replace("_", "").length)
+    return (
+      fio.length > 1 &&
+      city.length > 1 &&
+      phone.replace("_", "").length === 16 &&
+      agree
+    );
+  };
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} ref={props.refProp}>
       <div className={classes.orderForm}>
         <Grid direction="column" container className={classes.innerOrderForm}>
           <Grid item>
@@ -212,7 +249,7 @@ const Order = (props: any) => {
             <BccInput
               className={classes.inputStyle}
               fullWidth
-              label={t("order.fio")}
+              label={t("order.fio") + '*'}
               variant="filled"
               id="fio"
               name="fio"
@@ -224,7 +261,8 @@ const Order = (props: any) => {
             <BccInput
               variant="filled"
               fullWidth
-              label={t("order.phone")}
+              label={t("order.phone") + '*'}
+              onChange={(e: any) => setPhone(e.target.value)}
               className={classes.inputStyle}
               id="phone"
               name="phone"
@@ -235,6 +273,49 @@ const Order = (props: any) => {
               InputProps={{
                 inputComponent: BccMaskedInput as any,
               }}
+            />
+          </Grid>
+          <Grid item>
+            <BccInput
+              fullWidth={true}
+              className={classes.inputStyle}
+              label={t("order.city") + '*'}
+              id="city"
+              name="city"
+              value={city}
+              onChange={(e: any) => setCity(e.target.value)}
+              variant="outlined"
+              margin="normal"
+              select
+            >
+              {cities.map((c: string) => {
+                return (
+                  c !== null && (
+                    <MenuItem
+                      className={classes.cityTitle}
+                      key={c}
+                      value={c}
+                    >
+                      {c}
+                    </MenuItem>
+                  )
+                );
+              })}
+            </BccInput>
+          </Grid>
+          <Grid item>
+            <BccInput
+              fullWidth={true}
+              className={classes.inputStyle}
+              label={t("order.iin")}
+              id="iin"
+              name="iin"
+              value={iin}
+              helperText={phoneError ? t("order.phone_error") : ""}
+              error={phoneError ? true : false}
+              onChange={(e: any) => setIin(e.target.value.replace(/\D/g, "").substr(0, 12))}
+              variant="outlined"
+              margin="normal"
             />
           </Grid>
           <Grid item>
@@ -253,7 +334,12 @@ const Order = (props: any) => {
               className={classes.checkboxText}
             >
               <Grid item>
-                <BccCheckbox />
+                <BccCheckbox
+                  value="remember"
+                  color="primary"
+                  checked={agree}
+                  onChange={() => setAgree(!agree)}
+                />
               </Grid>
               <Grid item>
                 <BccTypography type="p3">
@@ -284,8 +370,8 @@ const Order = (props: any) => {
                 </Grid>
               </Grid>
               <Grid item className={classes.btnWrap}>
-                <BccButton variant="contained" color="primary">
-                  Отправить заявку
+                <BccButton variant="contained" disabled={!isValid()} color="primary">
+                  {t('order.send')}
                 </BccButton>
               </Grid>
             </Grid>
