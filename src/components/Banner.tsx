@@ -9,9 +9,12 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
       container: {
-        background: `url(${process.env.PUBLIC_URL + "/banner.jpeg"}) no-repeat`,
+        // background: `url(${process.env.PUBLIC_URL + "/banner.jpeg"}) no-repeat`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+      },
+      containerOut: {
+        background: "linear-gradient(to top, #f3f3f2, #f0f0ee)",
       },
       innerContainer: {
         margin: "0 auto",

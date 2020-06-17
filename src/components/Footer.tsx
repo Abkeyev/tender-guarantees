@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       footItemSocial: {
         marginTop: 30,
+        marginBottom: 12,
       },
       footBtn: {
         width: "100%",
@@ -69,11 +70,11 @@ const useStyles = makeStyles((theme: Theme) =>
         display: "flex",
         flexDirection: "row",
         flexWrap: "nowrap",
-        justifyContent: "space-between",
+        justifyContent: "flex-start",
         width: "100%",
         "& > a": {
           disaply: "block",
-          width: "calc(50% - 5px)",
+          width: "calc(50% - 15px)",
           "& > img": { width: "100%", maxWidth: 150 },
         },
       },
@@ -81,14 +82,18 @@ const useStyles = makeStyles((theme: Theme) =>
         marginBottom: 20,
         "& > div": {
           display: "flex",
-          flexDirection: "column",
-          width: "calc(50% - 15px)",
+          flexDirection: "row",
+          "& > a:first-child": { marginRight: 10 },
           "& > a": {
             display: "inline-block",
             color: "white",
             textDecoration: "none",
             fontSize: 16,
             marginBottom: 24,
+            maxWidth: 200,
+            "& > img": {
+              maxWidth: 200,
+            },
             "&:hover": {
               textDecoration: "underline",
             },
@@ -145,6 +150,7 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       footItemSocial: {
         marginTop: 30,
+        marginBottom: 12,
       },
       footBtn: {
         width: "100%",
@@ -163,8 +169,9 @@ const useStyles = makeStyles((theme: Theme) =>
         display: "flex",
         flexDirection: "row",
         flexWrap: "nowrap",
-        justifyContent: "space-between",
+        justifyContent: "flex-start",
         width: "100%",
+        "& > a:first-child": { marginRight: 10 },
         "& > a": {
           disaply: "block",
           width: "calc(50% - 15px)",
@@ -175,14 +182,17 @@ const useStyles = makeStyles((theme: Theme) =>
         marginBottom: 20,
         "& > div": {
           display: "flex",
-          flexDirection: "column",
-          width: "calc(50% - 15px)",
+          flexDirection: "row",
           "& > a": {
             display: "inline-block",
             color: "white",
             textDecoration: "none",
             fontSize: 16,
             marginBottom: 24,
+            maxWidth: 200,
+            "& > img": {
+              maxWidth: 200,
+            },
             "&:hover": {
               textDecoration: "underline",
             },
@@ -300,82 +310,10 @@ const Footer = (props: any) => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid item>
-                {/* <BccButton
-                  className={classes.footBtn}
-                  variant="outlined"
-                  color="primary"
-                >
-                  {t("footer.sms")}
-                </BccButton> */}
-              </Grid>
             </Grid>
           </Grid>
           <Grid item className={classes.footerTwo}>
-            <Grid
-              container
-              direction="row"
-              justify="space-between"
-              className={classes.footLinks}
-            >
-              <Grid item>
-                <a href="#" target="_blank">
-                  {t("footer.about")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.sale")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.tarif")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.vacancy")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.requisites")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.base")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.compilation")}
-                </a>
-              </Grid>
-              <Grid item>
-                <a href="#" target="_blank">
-                  {t("footer.press")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.qa")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.center")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.control")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.invest")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.info")}
-                </a>
-                <a href="#" target="_blank">
-                  {t("footer.right")}
-                </a>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          justify="space-between"
-          direction="row"
-          wrap="nowrap"
-          className={classes.foot2}
-        >
-          <Grid item className={classes.footerOne}>
-            <Grid container>
+            <Grid container direction="column" className={classes.footLinks}>
               <Grid item className={classes.mobileTitle}>
                 {t("footer.mobile")}
               </Grid>
@@ -393,10 +331,21 @@ const Footer = (props: any) => {
                   <img src={process.env.PUBLIC_URL + "/gp.svg"} />
                 </a>
               </Grid>
+              <Grid item className={classes.footerTwo}>
+                <div className={classes.footLicen}>{t("footer.lic")}</div>
+              </Grid>
             </Grid>
           </Grid>
-          <Grid item className={classes.footerTwo}>
-            <div className={classes.footLicen}>{t("footer.lic")}</div>
+        </Grid>
+        <Grid
+          container
+          justify="space-between"
+          direction="row"
+          wrap="nowrap"
+          className={classes.foot2}
+        >
+          <Grid item className={classes.footerOne}>
+            <Grid container></Grid>
           </Grid>
         </Grid>
       </div>

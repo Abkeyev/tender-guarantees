@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
     [theme.breakpoints.down("sm")]: {
       root: {
         padding: "40px 20px 40px",
-        backgroundColor: "#fff",
+        backgroundColor: "#fafafa",
         flexWrap: "wrap",
       },
       helpYou: {
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     [theme.breakpoints.between("md", "xl")]: {
       mainRoot: {
-        backgroundColor: "#fff",
+        backgroundColor: "#fafafa",
       },
       root: {
         padding: "40px 140px 80px",

@@ -37,8 +37,8 @@ function App() {
       <Sale lang={lang} />
       <Online refProp={orderRef} />
       <Benefits />
-      <CallUs />
       <Useful />
+      <CallUs />
       <Footer />
     </div>
   );

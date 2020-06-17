@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
       container: {
-        backgroundColor: "#fafafa",
+        backgroundColor: "#fff",
       },
       innerContainer: {
         maxWidth: "100%",
@@ -40,11 +40,20 @@ const useStyles = makeStyles((theme: Theme) =>
         "& > span": {
           color: "#27AE60",
         },
-        "& > div > div": {
-          width: "calc(50% - 15px)",
-          "& > img": {
+        "& > div": {
+          flexWrap: "wrap",
+          "& > div:first-child": {
+            order: 2,
+            marginBottom: 0,
+          },
+          "& > div": {
             width: "100%",
-            maxHeight: 250,
+            order: 1,
+            marginBottom: 12,
+            "& > img": {
+              width: "100%",
+              maxHeight: 250,
+            },
           },
         },
       },
@@ -69,7 +78,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     [theme.breakpoints.between("md", "xl")]: {
       container: {
-        backgroundColor: "#fafafa",
+        backgroundColor: "#fff",
       },
       innerContainer: {
         maxWidth: 1280,

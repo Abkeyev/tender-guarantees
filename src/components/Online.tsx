@@ -62,9 +62,17 @@ const useStyles = makeStyles((theme: Theme) =>
       lastSetp: {
         marginBottom: 50,
       },
+      lOut: {
+        flexWrap: "wrap",
+        flexDirection: "column",
+        alignItems: "center",
+        "& > div": {
+          width: "100%",
+        },
+      },
       qr: {
         "& > img": {
-          height: "100%",
+          width: "50%",
         },
       },
       mobileLinks: {
@@ -77,8 +85,8 @@ const useStyles = makeStyles((theme: Theme) =>
           marginBottom: 12,
           width: 120,
           "& > img": {
-            width: 120,
             display: "block",
+            width: 120,
           },
         },
       },
@@ -170,6 +178,12 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       lastSetp: {
         marginBottom: 50,
+      },
+      lOut: {
+        flexWrap: "wrap",
+        "& > div": {
+          width: "calc(50% - 18px)",
+        },
       },
       qr: {
         "& > img": {
@@ -337,6 +351,7 @@ const Banner = (props: any) => {
                   container
                   justify="flex-start"
                   direction="row"
+                  className={classes.lOut}
                   wrap="nowrap"
                 >
                   <Grid item className={classes.mobileLinks}>
