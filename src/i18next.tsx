@@ -7,7 +7,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 // have a look at the Quick start guide
 // for passing in lng and translations on init
 
-const languages = ["ru", "kz"];
+const languages = ["ru", "kz", "en"];
 
 i18n
   // load translation using xhr -> see /public/locales
@@ -25,14 +25,14 @@ i18n
     debug: true,
     whitelist: languages,
     detection: {
-      checkWhitelist: true
+      checkWhitelist: true,
     },
     interpolation: {
-      escapeValue: false // not needed for react as it escapes by default
+      escapeValue: false, // not needed for react as it escapes by default
     },
     backend: {
-      loadPath: `${window.location.pathname}locales/{{lng}}/translation.json`
-    }
+      loadPath: `${window.location.pathname}locales/{{lng}}/translation.json`,
+    },
   });
 
 export default i18n;

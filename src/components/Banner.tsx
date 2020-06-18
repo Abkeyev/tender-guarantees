@@ -8,13 +8,9 @@ import { useTranslation } from "react-i18next";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
-      container: {
-        // background: `url(${process.env.PUBLIC_URL + "/banner.jpeg"}) no-repeat`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      },
+      container: {},
       containerOut: {
-        background: "linear-gradient(to top, #f3f3f2, #f0f0ee)",
+        background: "linear-gradient(to top, #f8f7f5, #eeeeec)",
       },
       innerContainer: {
         margin: "0 auto",
@@ -77,7 +73,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     [theme.breakpoints.between("md", "xl")]: {
       container: {
-        background: `url(${process.env.PUBLIC_URL + "/banner.jpeg"}) no-repeat`,
+        background: `url(${process.env.PUBLIC_URL + "/banner.png"}) no-repeat`,
         backgroundSize: "contain",
         backgroundPosition: "right",
       },
@@ -186,6 +182,7 @@ const Banner = (props: any) => {
           >
             <MenuItem value="ru">РУС</MenuItem>
             <MenuItem value="kz">КАЗ</MenuItem>
+            <MenuItem value="en">ENG</MenuItem>
           </Select>
           <BccTypography type="h1" block className={classes.title}>
             {t("banner.title")}
@@ -200,7 +197,7 @@ const Banner = (props: any) => {
           </BccTypography>
           <Grid container direction="row" className={classes.block}>
             <Grid item className={classes.firstBlock}>
-              {props.lang === "ru" ? (
+              {props.lang === "ru" || props.lang === "en" ? (
                 <>
                   <BccTypography
                     type="h4"
@@ -252,7 +249,7 @@ const Banner = (props: any) => {
                 {t("banner.block1")}
               </BccTypography>
               <BccTypography type="p2" block>
-                {props.lang === "ru" ? (
+                {props.lang === "ru" || props.lang === "en" ? (
                   <>
                     {t("banner.block2_1")}{" "}
                     <span

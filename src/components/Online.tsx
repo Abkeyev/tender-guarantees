@@ -283,36 +283,48 @@ const Banner = (props: any) => {
 
   const onClickAS = (e: any, isIP: boolean) => {
     e.preventDefault();
-    isIP
-      ? ReactGA.event({
-          category: "IP_Starbusiness_downloawd_AppStore",
-          action: "IP_starbusiness_appstore",
-        })
-      : ReactGA.event({
-          category: "LE_Starbusiness_downloawd_AppStore",
-          action: "LE_starbusiness_appstore",
-        });
-    window.open(
-      "https://apps.apple.com/kz/app/starbusiness/id1452748006",
-      "_blank"
-    );
+    if (isIP) {
+      ReactGA.event({
+        category: "IP_Starbusiness_downloawd_AppStore",
+        action: "IP_starbusiness_appstore",
+      });
+      window.open(
+        "https://apps.apple.com/kz/app/starbusiness/id1452748006?utm_source=bcc.kz&utm_medium=button&utm_campaign=ip_request",
+        "_blank"
+      );
+    } else {
+      ReactGA.event({
+        category: "LE_Starbusiness_downloawd_AppStore",
+        action: "LE_starbusiness_appstore",
+      });
+      window.open(
+        "https://apps.apple.com/kz/app/starbusiness/id1452748006?utm_source=bcc.kz&utm_medium=button&utm_campaign=ul_request",
+        "_blank"
+      );
+    }
   };
 
   const onClickGP = (e: any, isIP: boolean) => {
     e.preventDefault();
-    isIP
-      ? ReactGA.event({
-          category: "IP_Starbusiness_downloawd_GooglePlay",
-          action: "IP_starbusiness_googleplay",
-        })
-      : ReactGA.event({
-          category: "LE_Starbusiness_downloawd_GooglePlay",
-          action: "LE_starbusiness_googleplay",
-        });
-    window.open(
-      "https://play.google.com/store/apps/details?id=bcc.sapphire&hl=ru",
-      "_blank"
-    );
+    if (isIP) {
+      ReactGA.event({
+        category: "IP_Starbusiness_downloawd_GooglePlay",
+        action: "IP_starbusiness_googleplay",
+      });
+      window.open(
+        "https://play.google.com/store/apps/details?id=bcc.sapphire&hl=ru&utm_source=bcc.kz&utm_medium=button&utm_campaign=ip_request",
+        "_blank"
+      );
+    } else {
+      ReactGA.event({
+        category: "LE_Starbusiness_downloawd_GooglePlay",
+        action: "LE_starbusiness_googleplay",
+      });
+      window.open(
+        "https://play.google.com/store/apps/details?id=bcc.sapphire&hl=ru&utm_source=bcc.kz&utm_medium=button&utm_campaign=ul_request",
+        "_blank"
+      );
+    }
   };
 
   function getStepContent(stepIndex: number) {
@@ -506,6 +518,7 @@ const Banner = (props: any) => {
                   justify="flex-start"
                   direction="row"
                   wrap="nowrap"
+                  className={classes.lOut}
                 >
                   <Grid item className={classes.mobileLinks}>
                     <span
@@ -522,7 +535,7 @@ const Banner = (props: any) => {
                     </span>
                   </Grid>
                   <Grid item className={classes.qr}>
-                    <img src={process.env.PUBLIC_URL + "/qr.svg"} />
+                    <img src={process.env.PUBLIC_URL + "/qrul.svg"} />
                   </Grid>
                 </Grid>
               </Grid>

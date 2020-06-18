@@ -24,24 +24,26 @@ const useStyles = makeStyles((theme: Theme) =>
       star: {
         width: "100%",
         margin: "0 auto",
+        alignItems: "center",
         padding: 30,
         backgdoundColor: "#fffff",
         boxShadow:
           "0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04);",
         borderRadius: 8,
         marginBottom: 50,
+        flexDirection: "column",
         "& > div:first-child": {
-          width: "20%",
+          width: "100%",
+          marginBottom: 12,
           "& > img": {
             width: "100%",
           },
         },
         "& > div:nth-child(2)": {
-          width: "80%",
+          width: "100%",
         },
       },
       starBlock2: {
-        paddingLeft: 24,
         alignSelf: "center",
       },
       starSteps: {
@@ -184,7 +186,7 @@ const Sale = (props: any) => {
             </BccTypography>
             <BccLink
               href={
-                props.lang === "ru"
+                props.lang === "ru" || props.lang === "en"
                   ? "https://www.bcc.kz/aktsii/aktsiya-5-0-v-vashu-polzu-/"
                   : "https://www.bcc.kz/kz/aktsii/aktsiya-5-0-v-vashu-polzu-/"
               }

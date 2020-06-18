@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
         marginBottom: 20,
       },
       footItemSocial: {
-        marginTop: 30,
+        marginTop: 24,
         marginBottom: 12,
       },
       footBtn: {
@@ -285,7 +285,10 @@ const Footer = (props: any) => {
               <Grid item className={classes.footItemSocial}>
                 <Grid container>
                   <Grid item>
-                    <a href="#" target="_blank">
+                    <a
+                      href="https://www.instagram.com/centercreditkz/?hl=ru"
+                      target="_blank"
+                    >
                       <img
                         className={classes.footIconSocial}
                         src={process.env.PUBLIC_URL + "/ig.svg"}
@@ -293,7 +296,7 @@ const Footer = (props: any) => {
                     </a>
                   </Grid>
                   <Grid item>
-                    <a href="#" target="_blank">
+                    <a href="https://www.facebook.com/bcc.kz/" target="_blank">
                       <img
                         className={classes.footIconSocial}
                         src={process.env.PUBLIC_URL + "/fb.svg"}
@@ -301,7 +304,7 @@ const Footer = (props: any) => {
                     </a>
                   </Grid>
                   <Grid item>
-                    <a href="#" target="_blank">
+                    <a href="https://vk.com/centercredit" target="_blank">
                       <img
                         className={classes.footIconSocial}
                         src={process.env.PUBLIC_URL + "/vk.svg"}
