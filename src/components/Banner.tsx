@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
     [theme.breakpoints.down("sm")]: {
       container: {},
       containerOut: {
-        background: "linear-gradient(to top, #f8f7f5, #eeeeec)",
+        background: "linear-gradient(to top, #ffffff, #f9f6f3)",
       },
       innerContainer: {
         margin: "0 auto",

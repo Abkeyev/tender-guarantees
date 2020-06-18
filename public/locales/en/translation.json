@@ -10,7 +10,7 @@
     "button": "Open account online"
   },
   "sale": {
-    "title": "Акция",
+    "title": "Sale",
     "saleTitle": "5:0 в Вашу пользу",
     "0tg": "0 ₸",
     "part1": "Opening of current account",
@@ -112,11 +112,11 @@
     "5text4": "Free cash withdrawals worldwide"
   },
   "callus": {
-    "phone": "Бесплатно с мобильного"
+    "phone": "Mobile free"
   },
   "footer": {
     "freemob": "Mobile free",
     "mobile": "Mobile application",
-    "lic": "Лицензия на проведение банковских и иных операций и деятельности на рынке ценных бумаг №1.2.25/195/34 от 28.01.2015 выданная НБ РК."
+    "lic": "License for carrying out banking and other operations and activities in the securities market No.1.2.25/195/34 as at 28 January 2015 issued by the NB RK."
   }
 }
