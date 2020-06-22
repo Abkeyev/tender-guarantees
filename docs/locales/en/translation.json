@@ -10,8 +10,8 @@
     "button": "Open account online"
   },
   "sale": {
-    "title": "Promotional offer",
-    "saleTitle": "5:0 to your advantage",
+    "title": "Sale",
+    "saleTitle": "5:0 в Вашу пользу",
     "0tg": "0 ₸",
     "part1": "Opening of current account",
     "part2": "Connection to “Internet-Banking” system",
@@ -105,7 +105,7 @@
     "4text4": "Minimum package of documents",
     "4text5": "Flexible approach to collateral",
     "4text6": "Possibility of registration and receipt in other regions of Kazakhstan",
-    "5": "Payroll project",
+    "5": "Зарплатный проект",
     "5text1": "Quick connection",
     "5text2": "Free issue and delivery of cards",
     "5text3": "Instant payroll",
