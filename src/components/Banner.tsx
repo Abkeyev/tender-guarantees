@@ -8,7 +8,12 @@ import { useTranslation } from "react-i18next";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
-      container: {},
+      container: {
+        background: `url(${process.env.PUBLIC_URL +
+          "/banner-mob.jpg"}) no-repeat`,
+        backgroundSize: "cover",
+        backgroundPosition: "right",
+      },
       containerOut: {
         background: "linear-gradient(to top, #ffffff, #f9f6f3)",
       },
@@ -74,7 +79,7 @@ const useStyles = makeStyles((theme: Theme) =>
     [theme.breakpoints.between("md", "xl")]: {
       container: {
         background: `url(${process.env.PUBLIC_URL + "/banner.png"}) no-repeat`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundPosition: "right",
       },
       containerOut: {
