@@ -90,7 +90,7 @@ const useStyles = makeStyles((theme: Theme) =>
         position: "relative",
         margin: "0 auto",
         width: "100%",
-        padding: "90px 140px 115px",
+        padding: "60px 140px 150px",
         boxSizing: "border-box",
       },
       title: {
@@ -147,7 +147,7 @@ const Banner = (props: any) => {
       category: "1button_starbusiness_calltoaction",
       action: "starbusiness_calltoaction",
     });
-    window.open("http://onelink.to/bkyvu8", "_blank");
+    window.open("http://onelink.to/q9jhwj", "_blank");
   };
 
   const goToOnline = (e: any) => {

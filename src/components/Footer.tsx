@@ -322,13 +322,13 @@ const Footer = (props: any) => {
               </Grid>
               <Grid item className={classes.appLinks}>
                 <a
-                  href="https://apps.apple.com/kz/app/starbusiness/id1452748006"
+                  href="https://apps.apple.com/kz/app/starbusiness/id1452748006?utm_source=bcc.kz&utm_medium=button&utm_campaign=footer"
                   target="_blank"
                 >
                   <img src={process.env.PUBLIC_URL + "/as.svg"} />
                 </a>
                 <a
-                  href="https://play.google.com/store/apps/details?id=bcc.sapphire&hl=ru"
+                  href="https://play.google.com/store/apps/details?id=bcc.sapphire&hl=ru&utm_source=bcc.kz&utm_medium=button&utm_campaign=footer"
                   target="_blank"
                 >
                   <img src={process.env.PUBLIC_URL + "/gp.svg"} />
