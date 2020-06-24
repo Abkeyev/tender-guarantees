@@ -79,11 +79,11 @@ const useStyles = makeStyles((theme: Theme) =>
     [theme.breakpoints.between("md", "xl")]: {
       container: {
         background: `url(${process.env.PUBLIC_URL + "/banner.png"}) no-repeat`,
-        backgroundSize: "cover",
-        backgroundPosition: "right",
+        backgroundSize: "contain",
+        backgroundPosition: "right top",
       },
       containerOut: {
-        background: "linear-gradient(to top, #f3f3f2, #f0f0ee)",
+        background: "linear-gradient(to top, #f6f6f5, #f4f4f2)",
       },
       innerContainer: {
         maxWidth: 1280,
