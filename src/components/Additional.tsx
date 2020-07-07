@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
       maxWidth: 1280,
       margin: "0 auto",
       boxSizing: "border-box",
-      padding: "80px 140px",
+      padding: "80px 100px",
     },
   })
 );

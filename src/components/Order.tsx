@@ -6,7 +6,11 @@ import {
   BccInput,
   BccLink,
   BccSelect,
+  BccRadio,
+  BccRadioGroup,
   BccButton,
+  BccFormControl,
+  BccFormControlLabel,
 } from "./BccComponents";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import MaskedInput from "react-maskedinput";
@@ -15,6 +19,9 @@ import { useTranslation } from "react-i18next";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
+      outerContainer: {
+        background: "#fafafa",
+      },
       container: {
         margin: "0 auto",
         boxSizing: "border-box",
@@ -100,11 +107,14 @@ const useStyles = makeStyles((theme: Theme) =>
       garant: { textAlign: "left", marginBottom: 16 },
     },
     [theme.breakpoints.between("md", "xl")]: {
+      outerContainer: {
+        background: "#fafafa",
+      },
       container: {
         maxWidth: 1280,
         margin: "0 auto",
         boxSizing: "border-box",
-        padding: "80px 140px",
+        padding: "80px 100px",
       },
       title: {
         marginBottom: 40,
@@ -146,9 +156,12 @@ const useStyles = makeStyles((theme: Theme) =>
         textAlign: "left",
       },
       checkboxText: {
-        alignItems: "center",
         marginBottom: 20,
         marginTop: 15,
+        "& > div:last-child": {
+          marginLeft: 20,
+          textAlign: "left",
+        },
       },
       btnWrap: {
         width: "calc(50% - 10px)",
@@ -159,6 +172,9 @@ const useStyles = makeStyles((theme: Theme) =>
         height: "19px",
       },
       garant: { textAlign: "left" },
+      radio: {
+        marginBottom: 30,
+      },
     },
   })
 );
@@ -208,8 +224,11 @@ const Order = (props: any) => {
   const [fio, setFio] = React.useState("");
   const [phone, setPhone] = React.useState("");
   const [email, setEmail] = React.useState("");
+  const [sum, setSum] = React.useState("");
+  const [period, setPeriod] = React.useState("");
   const [iin, setIin] = React.useState("");
   const [city, setCity] = React.useState("");
+  const [type, setType] = React.useState("ip");
   const [phoneError, setPhoneError] = React.useState<boolean>(false);
   const [agree, setAgree] = React.useState<boolean>(true);
 
@@ -224,161 +243,194 @@ const Order = (props: any) => {
   };
 
   return (
-    <div className={classes.container}>
-      <div className={classes.orderForm}>
-        <Grid direction="column" container className={classes.innerOrderForm}>
-          <Grid item>
-            <BccTypography
-              type="h2"
-              weight="medium"
-              block
-              className={classes.titleForm}
-            >
-              {t("order.title")}
-            </BccTypography>
-            <BccTypography
-              type="p1"
-              weight="medium"
-              block
-              className={classes.subTitleForm}
-            >
-              {t("order.subtitle")}
-            </BccTypography>
-          </Grid>
-          <Grid item>
-            <BccInput
-              className={classes.inputStyle}
-              fullWidth
-              label={t("order.fio") + "*"}
-              variant="filled"
-              id="fio"
-              name="fio"
-              value={fio}
-              onChange={(e: any) => setFio(e.target.value)}
-            />
-          </Grid>
-          <Grid item>
-            <BccInput
-              variant="filled"
-              fullWidth
-              label={t("order.phone") + "*"}
-              onChange={(e: any) => setPhone(e.target.value)}
-              className={classes.inputStyle}
-              id="phone"
-              name="phone"
-              value={phone}
-              InputLabelProps={{
-                shrink: true,
-              }}
-              InputProps={{
-                inputComponent: BccMaskedInput as any,
-              }}
-            />
-          </Grid>
-          <Grid item>
-            <BccInput
-              fullWidth={true}
-              className={classes.inputStyle}
-              label={t("order.city") + "*"}
-              id="city"
-              name="city"
-              value={city}
-              onChange={(e: any) => setCity(e.target.value)}
-              variant="outlined"
-              margin="normal"
-              select
-            >
-              {cities.map((c: string) => {
-                return (
-                  c !== null && (
-                    <MenuItem className={classes.cityTitle} key={c} value={c}>
-                      {c}
-                    </MenuItem>
-                  )
-                );
-              })}
-            </BccInput>
-          </Grid>
-          <Grid item>
-            <BccInput
-              fullWidth={true}
-              className={classes.inputStyle}
-              label={t("order.iin")}
-              id="iin"
-              name="iin"
-              value={iin}
-              helperText={phoneError ? t("order.phone_error") : ""}
-              error={phoneError ? true : false}
-              onChange={(e: any) =>
-                setIin(e.target.value.replace(/\D/g, "").substr(0, 12))
-              }
-              variant="outlined"
-              margin="normal"
-            />
-          </Grid>
-          <Grid item>
-            <BccInput
-              className={classes.inputStyle}
-              fullWidth
-              label={t("order.email")}
-              variant="filled"
-            />
-          </Grid>
-          <Grid item>
-            <Grid
-              container
-              justify="space-between"
-              wrap="nowrap"
-              className={classes.checkboxText}
-            >
-              <Grid item>
-                <BccCheckbox
-                  value="remember"
-                  color="primary"
-                  checked={agree}
-                  onChange={() => setAgree(!agree)}
-                />
-              </Grid>
-              <Grid item>
-                <BccTypography type="p3">
-                  {t("order.agree")}{" "}
-                  <BccLink href="https://www.bcc.kz/" target="_blank">
-                    {t("order.agree1")}
-                  </BccLink>
-                </BccTypography>
-              </Grid>
+    <div className={classes.outerContainer} ref={props.refProp}>
+      <div className={classes.container}>
+        <div className={classes.orderForm}>
+          <Grid direction="column" container className={classes.innerOrderForm}>
+            <Grid item>
+              <BccTypography
+                type="h2"
+                weight="medium"
+                block
+                className={classes.titleForm}
+              >
+                Оставить заявку на кредит
+              </BccTypography>
+              <BccTypography
+                type="p1"
+                weight="medium"
+                block
+                className={classes.subTitleForm}
+              >
+                Оставьте Ваши контактные данные и наш менеджер свяжется с Вами
+              </BccTypography>
             </Grid>
-          </Grid>
-          <Grid item>
-            <Grid container justify="space-between">
-              <Grid item className={classes.btnWrap}>
-                <Grid container spacing={2}>
-                  <Grid item>
-                    <img
-                      src={process.env.PUBLIC_URL + "/safety.svg"}
-                      className={classes.icon}
-                      alt="order_security"
-                    />
-                  </Grid>
-                  <Grid item xl={true} lg={true} md={true} sm={true} xs={true}>
-                    <BccTypography type="p3" className={classes.garant}>
-                      {t("order.safety")}
-                    </BccTypography>
-                  </Grid>
+            <Grid item>
+              <BccFormControl className={classes.radio}>
+                <BccRadioGroup
+                  value={type}
+                  row
+                  onChange={(e: any) => setType(e.target.value)}
+                >
+                  <BccFormControlLabel
+                    value="ip"
+                    control={<BccRadio />}
+                    label="Индивидуальный предприниматель"
+                    labelPlacement="end"
+                  />
+                  <BccFormControlLabel
+                    value="ul"
+                    control={<BccRadio />}
+                    label="Юридическое лицо"
+                    labelPlacement="end"
+                  />
+                </BccRadioGroup>
+              </BccFormControl>
+            </Grid>
+            <Grid item>
+              <BccInput
+                className={classes.inputStyle}
+                fullWidth
+                label={type === "ul" ? "Наименование компании*" : "ФИО*"}
+                variant="filled"
+                id="fio"
+                name="fio"
+                value={fio}
+                onChange={(e: any) => setFio(e.target.value)}
+              />
+            </Grid>
+            <Grid item>
+              <BccInput
+                fullWidth={true}
+                className={classes.inputStyle}
+                label={type === "ul" ? "БИН*" : "ИИН*"}
+                id="iin"
+                name="iin"
+                value={iin}
+                helperText={phoneError ? t("order.phone_error") : ""}
+                error={phoneError ? true : false}
+                onChange={(e: any) =>
+                  setIin(e.target.value.replace(/\D/g, "").substr(0, 12))
+                }
+                variant="filled"
+              />
+            </Grid>
+            <Grid item>
+              <BccInput
+                variant="filled"
+                fullWidth
+                label={t("order.phone") + "*"}
+                onChange={(e: any) => setPhone(e.target.value)}
+                className={classes.inputStyle}
+                id="phone"
+                name="phone"
+                value={phone}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                InputProps={{
+                  inputComponent: BccMaskedInput as any,
+                }}
+              />
+            </Grid>
+            <Grid item>
+              <BccInput
+                fullWidth={true}
+                className={classes.inputStyle}
+                label={"Email*"}
+                id="email"
+                name="email"
+                value={email}
+                onChange={(e: any) => setEmail(e.target.value)}
+                variant="filled"
+              />
+            </Grid>
+            <Grid item>
+              <BccInput
+                fullWidth={true}
+                className={classes.inputStyle}
+                label={"Сумма*"}
+                id="sum"
+                name="sum"
+                value={sum}
+                onChange={(e: any) => setSum(e.target.value)}
+                variant="filled"
+              />
+            </Grid>
+            <Grid item>
+              <BccInput
+                fullWidth={true}
+                className={classes.inputStyle}
+                label={"Срок кредита*"}
+                id="period"
+                name="period"
+                value={period}
+                onChange={(e: any) => setPeriod(e.target.value)}
+                variant="filled"
+              />
+            </Grid>
+            <Grid item>
+              <Grid
+                container
+                justify="space-between"
+                wrap="nowrap"
+                className={classes.checkboxText}
+              >
+                <Grid item>
+                  <BccCheckbox
+                    value="remember"
+                    color="primary"
+                    checked={agree}
+                    onChange={() => setAgree(!agree)}
+                  />
+                </Grid>
+                <Grid item>
+                  <BccTypography type="p3">
+                    Подтверждаю согласие на сбор и обработку персональных
+                    данных, включая получение информации и кредитного отчета с
+                    ТОО «Первое кредитное бюро» и ГБД ЮЛ.
+                  </BccTypography>
                 </Grid>
               </Grid>
-              <Grid item className={classes.btnWrap}>
-                <BccButton
-                  variant="contained"
-                  disabled={!isValid()}
-                  color="primary"
-                >
-                  {t("order.send")}
-                </BccButton>
+            </Grid>
+            <Grid item>
+              <Grid container justify="space-between">
+                <Grid item className={classes.btnWrap}>
+                  <Grid container spacing={2}>
+                    <Grid item>
+                      <img
+                        src={process.env.PUBLIC_URL + "/safety.svg"}
+                        className={classes.icon}
+                        alt="order_security"
+                      />
+                    </Grid>
+                    <Grid
+                      item
+                      xl={true}
+                      lg={true}
+                      md={true}
+                      sm={true}
+                      xs={true}
+                    >
+                      <BccTypography type="p3" className={classes.garant}>
+                        {t("order.safety")}
+                      </BccTypography>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid item className={classes.btnWrap}>
+                  <BccButton
+                    variant="contained"
+                    // disabled={!isValid()}
+                    color="primary"
+                  >
+                    Подать заявку
+                  </BccButton>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
+        </div>
       </div>
     </div>
   );

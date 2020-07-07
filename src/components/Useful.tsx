@@ -84,16 +84,15 @@ const useStyles = makeStyles((theme: Theme) =>
         maxWidth: 1280,
         margin: "0 auto",
         width: "100%",
-        padding: "40px 100px 60px",
+        padding: "40px 140px 60px",
         boxSizing: "border-box",
       },
       title: {
         marginBottom: 40,
-        textAlign: "center",
+        textAlign: "left",
       },
       tabs: {
         marginTop: 40,
-        minHeight: 350,
         fontSize: 16,
         backgroundRepeat: "no-repeat",
         backgroundPosition: "right",
@@ -102,11 +101,15 @@ const useStyles = makeStyles((theme: Theme) =>
           color: "#27AE60",
         },
         "& > div > div": {
-          width: "calc(50% - 15px)",
-          "& > img": {
-            width: "100%",
-            maxHeight: 250,
-          },
+          width: "50%",
+          paddingBottom: 24,
+          borderBottom: "1px solid #F3F3F3",
+          marginBottom: 25,
+        },
+        "& > div > div:nth-child(2n+1)": {
+          color: "#80868C",
+          paddingRight: 15,
+          paddingLeft: 0,
         },
       },
       tab: {
@@ -134,34 +137,6 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const items = [
-  {
-    img: "/u1.svg",
-    content: [1, 2, 3, 4, 5, 6],
-    url: "https://www.bcc.kz/product/currency-control/",
-  },
-  {
-    img: "/u2.svg",
-    content: [1, 2, 3, 4],
-    url: "https://www.bcc.kz/product/system-internet-banking_yur/",
-  },
-  {
-    img: "/u3.svg",
-    content: [[0, 1, 2], 2, 3, 4, 5, 6],
-    url: "https://www.bcc.kz/product/overdraft/",
-  },
-  {
-    img: "/u4.svg",
-    content: [1, 2, 3, 4, 5, 6],
-    url: "https://www.bcc.kz/product/tender-guarantees/",
-  },
-  {
-    img: "/u5.svg",
-    content: [1, 2, 3, 4],
-    url: "https://www.bcc.kz/product/salary-project/",
-  },
-];
-
 const Useful = (props: any) => {
   const classes = useStyles({});
   const [index, setIndex] = React.useState(0);
@@ -171,7 +146,7 @@ const Useful = (props: any) => {
     <div className={classes.container}>
       <div className={classes.innerContainer}>
         <BccTypography type="h2" block className={classes.title}>
-          {t("useful.title")}
+          Часто задаваемые вопросы
         </BccTypography>
 
         <BccTabs
@@ -179,45 +154,28 @@ const Useful = (props: any) => {
           onChange={(e: any, i: number) => setIndex(i)}
           className={classes.tab}
         >
-          {items &&
-            items.map((item: any, i: number) => {
-              return <BccTab label={t(`useful.${i + 1}`)} />;
-            })}
+          <BccTab label="Часто задаваемые вопросы" />;
         </BccTabs>
         <div className={classes.tabs}>
-          <Grid container justify="space-between" wrap="nowrap">
+          <Grid container justify="space-between">
             <Grid item>
-              {items[index].content.map((c: any, ind: number) => {
-                return c.length > 1 ? (
-                  c.map((cc: any, ii: number) => {
-                    t(`useful.${index + 1}text${c}${ii}`);
-                  })
-                ) : (
-                  <>
-                    <span>•</span> {t(`useful.${index + 1}text${c}`)}
-                    <br />
-                    <br />
-                  </>
-                );
-              })}
-              <BccLink
-                href={items[index].url}
-                target="_blank"
-                className={classes.link}
-              >
-                <BccButton
-                  style={{
-                    textTransform: "capitalize",
-                    padding: 0,
-                  }}
-                  variant="text"
-                >
-                  {t("useful.more")}
-                </BccButton>
-              </BccLink>
+              Кредитный лимит можно открыть сразу при открытии счета?
             </Grid>
             <Grid item>
-              <img src={`${process.env.PUBLIC_URL + items[index].img}`} />
+              Да, Вы можете открыть кредитный лимит на счёт сразу после открытия
+              счета
+            </Grid>
+            <Grid item>
+              Кредитный лимит на счёт открывается действующим клиентам?
+            </Grid>
+            <Grid item>
+              Да, открыть кредитный лимит на счёт можно и новым, и действующим
+              клиентам
+            </Grid>
+            <Grid item>В чём отличается тариф WELCOME от STANDARD?</Grid>
+            <Grid item>
+              Каждому клиенту открывается WELCOME лимит без финансового анализа
+              в размере 5 000 тенге. STANDARD лимит насчитывается индивидуально
             </Grid>
           </Grid>
         </div>

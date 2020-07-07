@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme: Theme) =>
         maxWidth: 1280,
         margin: "0 auto",
         boxSizing: "border-box",
-        padding: "40px 140px 80px",
+        padding: "40px 100px 80px",
       },
       title: {
         marginBottom: 40,
@@ -69,10 +69,13 @@ const useStyles = makeStyles((theme: Theme) =>
           "0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 10px 20px rgba(0, 0, 0, 0.04)",
         borderRadius: 8,
         padding: "20px",
+        display: "flex",
+        flexWrap: "nowrap",
+        alignItems: "center",
         "& > img": {
           height: 60,
-          display: "block",
-          marginBottom: 10,
+          display: "inline-block",
+          marginRight: 24,
         },
       },
       itemTitle: {
@@ -83,12 +86,12 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const items = [
-  "/icons/online.svg",
-  "/icons/internet.svg",
-  "/icons/starbusiness.svg",
+  "/icons/idea.svg",
+  "/icons/contract.svg",
+  "/icons/time.svg",
+  "/icons/tengeu.svg",
+  "/icons/period.svg",
   "/icons/doc.svg",
-  "/icons/currency.svg",
-  "/icons/support.svg",
 ];
 
 const Banner = (props: any) => {
@@ -105,11 +108,8 @@ const Banner = (props: any) => {
           {items.map((i: string, index: number) => (
             <Grid item className={classes.item}>
               <img src={process.env.PUBLIC_URL + i} />
-              <BccTypography type="h4" block className={classes.itemTitle}>
+              <BccTypography type="h6" block className={classes.itemTitle}>
                 {t(`benefits.${index + 1}`)}
-              </BccTypography>
-              <BccTypography type="p2" block>
-                {t(`benefits.${index + 1}text`)}
               </BccTypography>
             </Grid>
           ))}

@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 const BccToggleButton = withStyles({
   root: {
     borderColor: "#27AE60",
+    transition: "all .2s ease-out",
     "&:hover": {
       backgroundColor: "#27AE60",
       "& span": {
@@ -25,6 +26,7 @@ const BccToggleButton = withStyles({
     },
     "& span": {
       color: "#80868C",
+      transition: "all .2s ease-out",
     },
   },
 })((props: any) => (

@@ -1,11 +1,12 @@
 import React from "react";
 import {
   Banner,
-  Online,
+  Tabs,
   Benefits,
-  CallUs,
-  Sale,
+  Starbusiness,
+  Order,
   Useful,
+  CallUs,
   Footer,
 } from "./components";
 import "./App.css";
@@ -34,9 +35,10 @@ function App() {
         lang={lang}
         changeLang={handleLangChange}
       />
-      <Sale lang={lang} />
-      <Online refProp={orderRef} />
       <Benefits />
+      <Tabs />
+      <Order refProp={orderRef} />
+      <Starbusiness />
       <Useful />
       <CallUs />
       <Footer />

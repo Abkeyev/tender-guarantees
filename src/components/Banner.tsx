@@ -9,8 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
       container: {
-        background: `url(${process.env.PUBLIC_URL +
-          "/banner-mob.jpg"}) no-repeat`,
+        background: `url(${process.env.PUBLIC_URL + "/banner.png"}) no-repeat`,
         backgroundSize: "cover",
         backgroundPosition: "right",
       },
@@ -90,11 +89,11 @@ const useStyles = makeStyles((theme: Theme) =>
         position: "relative",
         margin: "0 auto",
         width: "100%",
-        padding: "60px 140px 150px",
+        padding: "100px 100px 150px",
         boxSizing: "border-box",
       },
       title: {
-        marginBottom: 15,
+        marginBottom: 152,
       },
       subTitle: {
         marginBottom: 30,
@@ -133,158 +132,56 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Banner = (props: any) => {
   const classes = useStyles({});
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
-  const openBtn = () => {};
+  // const handleLangChange = (lang: any) => {
+  //   props.changeLang(lang);
+  // };
 
-  const handleLangChange = (lang: any) => {
-    props.changeLang(lang);
-  };
-
-  const onClickAppStore = (e: any) => {
-    e.preventDefault();
-    ReactGA.event({
-      category: "1button_starbusiness_calltoaction",
-      action: "starbusiness_calltoaction",
-    });
-    window.open("http://onelink.to/q9jhwj", "_blank");
-  };
+  // const onClickAppStore = (e: any) => {
+  //   e.preventDefault();
+  //   ReactGA.event({
+  //     category: "1button_starbusiness_calltoaction",
+  //     action: "starbusiness_calltoaction",
+  //   });
+  //   window.open("http://onelink.to/q9jhwj", "_blank");
+  // };
 
   const goToOnline = (e: any) => {
     e.preventDefault();
-    ReactGA.event({
-      category: "1button_open_account_online_calltoaction",
-      action: "Open_account_online_calltoaction",
-    });
+    // ReactGA.event({
+    //   category: "1button_open_account_online_calltoaction",
+    //   action: "Open_account_online_calltoaction",
+    // });
     props.scrollToOrder();
   };
 
-  const onClickIB = (e: any) => {
-    e.preventDefault();
-    ReactGA.event({
-      category: "1button_internetbanking_calltoaction",
-      action: "interbanking_calltoaction",
-    });
-    window.open(
-      "https://www.bcc.kz/product/system-internet-banking_yur/",
-      "_blank"
-    );
-  };
+  // const onClickIB = (e: any) => {
+  //   e.preventDefault();
+  //   ReactGA.event({
+  //     category: "1button_internetbanking_calltoaction",
+  //     action: "interbanking_calltoaction",
+  //   });
+  //   window.open(
+  //     "https://www.bcc.kz/product/system-internet-banking_yur/",
+  //     "_blank"
+  //   );
+  // };
 
   return (
     <div className={classes.containerOut}>
       <div className={classes.container}>
         <div className={classes.innerContainer}>
-          <Select
-            className={classes.select}
-            value={props.lang}
-            onChange={(e: any) => handleLangChange(e.target.value)}
-            inputProps={{
-              classes: {
-                icon: classes.icon,
-              },
-            }}
-          >
-            <MenuItem value="ru">РУС</MenuItem>
-            <MenuItem value="kz">КАЗ</MenuItem>
-            <MenuItem value="en">ENG</MenuItem>
-          </Select>
           <BccTypography type="h1" block className={classes.title}>
-            {t("banner.title")}
+            Растущий бизнес
           </BccTypography>
-          <BccTypography
-            type="h3"
-            weight="normal"
-            block
-            className={classes.subTitle}
-          >
-            {t("banner.title_desc")}
-          </BccTypography>
-          <Grid container direction="row" className={classes.block}>
-            <Grid item className={classes.firstBlock}>
-              {props.lang === "ru" || props.lang === "en" ? (
-                <>
-                  <BccTypography
-                    type="h4"
-                    weight="bold"
-                    block
-                    className={classes.blockText}
-                  >
-                    {t("banner.block1")}
-                  </BccTypography>
-                  <BccTypography type="p2" block>
-                    {t("banner.block1_1")}{" "}
-                    <span
-                      className={classes.link}
-                      onClick={(e: any) => onClickAppStore(e)}
-                    >
-                      {t("banner.block1_2")}
-                    </span>
-                  </BccTypography>
-                </>
-              ) : (
-                <>
-                  <BccTypography
-                    type="h4"
-                    weight="bold"
-                    block
-                    className={classes.blockText}
-                  >
-                    {t("banner.block1")}
-                  </BccTypography>
-                  <BccTypography type="p2" block>
-                    <span
-                      className={classes.link}
-                      onClick={(e: any) => onClickAppStore(e)}
-                    >
-                      {t("banner.block1_1")}
-                    </span>{" "}
-                    {t("banner.block1_2")}
-                  </BccTypography>
-                </>
-              )}
-            </Grid>
-            <Grid item>
-              <BccTypography
-                type="h4"
-                weight="bold"
-                block
-                className={classes.blockText}
-              >
-                {t("banner.block1")}
-              </BccTypography>
-              <BccTypography type="p2" block>
-                {props.lang === "ru" || props.lang === "en" ? (
-                  <>
-                    {t("banner.block2_1")}{" "}
-                    <span
-                      className={classes.link}
-                      onClick={(e) => onClickIB(e)}
-                    >
-                      {t("banner.block2_2")}
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <span
-                      className={classes.link}
-                      onClick={(e) => onClickIB(e)}
-                    >
-                      {t("banner.block2_1")}
-                    </span>{" "}
-                    {t("banner.block2_2")}
-                  </>
-                )}
-              </BccTypography>
-            </Grid>
-          </Grid>
           <BccButton
             className={classes.openBtn}
             variant="contained"
             color="primary"
             onClick={(e: any) => goToOnline(e)}
           >
-            {t("banner.button")}
+            Подать заявку
           </BccButton>
         </div>
       </div>
