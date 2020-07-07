@@ -15,7 +15,7 @@ import { animateScroll } from "react-scroll";
 
 function App() {
   const { t, i18n } = useTranslation();
-  const [lang, setLang] = React.useState(i18n.language ? i18n.language : "ru");
+  const [lang, setLang] = React.useState("ru");
   const orderRef: any = React.useRef(null);
 
   const handleLangChange = (lang: string) => {

@@ -68,7 +68,7 @@ const Starbusiness = (props: any) => {
             </BccTypography>
           </BccButton>
           <BccTypography block type="h3" className={classes.title}>
-            StarBanking
+            StarBusiness
           </BccTypography>
           <BccTypography block type="p2" className={classes.subTitle}>
             Управляйте бизнесом онлайн через мобильное приложение “StarBusiness”

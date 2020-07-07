@@ -395,7 +395,7 @@ const Tabs = (props: any) => {
             weight="medium"
             type="p2"
           >
-            Погошение
+            Погашение
           </BccTypography>
         </BccToggleButton>
         <BccToggleButton value="documents">
