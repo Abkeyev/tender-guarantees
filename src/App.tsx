@@ -10,18 +10,10 @@ import {
   Footer,
 } from "./components";
 import "./App.css";
-import { useTranslation } from "react-i18next";
 import { animateScroll } from "react-scroll";
 
 function App() {
-  const { t, i18n } = useTranslation();
-  const [lang, setLang] = React.useState("ru");
   const orderRef: any = React.useRef(null);
-
-  const handleLangChange = (lang: string) => {
-    setLang(lang);
-    i18n.changeLanguage(lang);
-  };
 
   const scrollToOrderRef = () => {
     console.log(orderRef);
@@ -30,11 +22,7 @@ function App() {
 
   return (
     <div>
-      <Banner
-        scrollToOrder={scrollToOrderRef}
-        lang={lang}
-        changeLang={handleLangChange}
-      />
+      <Banner scrollToOrder={scrollToOrderRef} />
       <Benefits />
       <Tabs />
       <Order refProp={orderRef} />
