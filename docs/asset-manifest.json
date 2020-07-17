@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tender-guarantees/static/css/main.aa1da0c2.chunk.css",
+    "main.js": "/tender-guarantees/static/js/main.0574bfed.chunk.js",
+    "main.js.map": "/tender-guarantees/static/js/main.0574bfed.chunk.js.map",
+    "runtime-main.js": "/tender-guarantees/static/js/runtime-main.1d26d8dc.js",
+    "runtime-main.js.map": "/tender-guarantees/static/js/runtime-main.1d26d8dc.js.map",
+    "static/js/2.2af58904.chunk.js": "/tender-guarantees/static/js/2.2af58904.chunk.js",
+    "static/js/2.2af58904.chunk.js.map": "/tender-guarantees/static/js/2.2af58904.chunk.js.map",
+    "index.html": "/tender-guarantees/index.html",
+    "precache-manifest.e69f2d7c2ecaa01c8ef26e08f1c1a6fa.js": "/tender-guarantees/precache-manifest.e69f2d7c2ecaa01c8ef26e08f1c1a6fa.js",
+    "service-worker.js": "/tender-guarantees/service-worker.js",
+    "static/css/main.aa1da0c2.chunk.css.map": "/tender-guarantees/static/css/main.aa1da0c2.chunk.css.map",
+    "static/js/2.2af58904.chunk.js.LICENSE": "/tender-guarantees/static/js/2.2af58904.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1d26d8dc.js",
+    "static/js/2.2af58904.chunk.js",
+    "static/css/main.aa1da0c2.chunk.css",
+    "static/js/main.0574bfed.chunk.js"
+  ]
+}
