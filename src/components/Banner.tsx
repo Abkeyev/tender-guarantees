@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme: Theme) =>
     [theme.breakpoints.between("md", "xl")]: {
       container: {
         background: `url(${process.env.PUBLIC_URL + "/banner.png"}) no-repeat`,
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundPosition: "right top",
       },
       containerOut: {
