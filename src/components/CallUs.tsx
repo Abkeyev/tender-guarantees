@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     [theme.breakpoints.between("md", "xl")]: {
       mainRoot: {
-        backgroundColor: "#fafafa",
+        backgroundColor: "#fff",
       },
       root: {
         padding: "40px 140px 80px",

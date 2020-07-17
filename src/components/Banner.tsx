@@ -9,21 +9,23 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     [theme.breakpoints.down("sm")]: {
       container: {
-        background: `url(${process.env.PUBLIC_URL + "/banner.png"}) no-repeat`,
+        background: `url(${process.env.PUBLIC_URL +
+          "/bannerMob.png"}) no-repeat`,
         backgroundSize: "cover",
         backgroundPosition: "right",
       },
       containerOut: {
-        background: "linear-gradient(to top, #ffffff, #f9f6f3)",
+        background: "#ffffff",
       },
       innerContainer: {
         margin: "0 auto",
         width: "100%",
-        padding: "60px 20px 40px",
+        padding: "12px 20px 40px",
         boxSizing: "border-box",
       },
       title: {
-        marginBottom: 15,
+        marginTop: 50,
+        marginBottom: 30,
         fontWeight: "bold",
         fontFamily: "Roboto",
         fontSize: 28,
@@ -31,13 +33,13 @@ const useStyles = makeStyles((theme: Theme) =>
         color: "#141414",
       },
       subTitle: {
-        marginBottom: 30,
+        marginBottom: 90,
         opacity: 0.7,
         fontWeight: "normal",
         fontFamily: "Roboto",
         fontSize: 16,
         lineHeight: "19px",
-        color: "#5B5B5B",
+        color: "inherit",
       },
       blockText: {
         marginBottom: 5,
@@ -63,9 +65,6 @@ const useStyles = makeStyles((theme: Theme) =>
         marginTop: 95,
       },
       select: {
-        position: "absolute",
-        right: 20,
-        top: 50,
         color: "#141414",
         "&:hover:not(.Mui-disabled):before": {
           borderBottom: 0,
@@ -82,21 +81,22 @@ const useStyles = makeStyles((theme: Theme) =>
         backgroundPosition: "right top",
       },
       containerOut: {
-        background: "linear-gradient(to top, #f6f6f5, #f4f4f2)",
+        background: "#ffffff",
       },
       innerContainer: {
         maxWidth: 1280,
         position: "relative",
         margin: "0 auto",
         width: "100%",
-        padding: "100px 100px 150px",
+        padding: "30px 100px 150px",
         boxSizing: "border-box",
       },
       title: {
-        marginBottom: 152,
+        marginBottom: 30,
+        marginTop: 90,
       },
       subTitle: {
-        marginBottom: 30,
+        marginBottom: 180,
         opacity: 0.7,
       },
       block: {
@@ -110,9 +110,6 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       openBtn: { minWidth: 300, fontSize: 18, fontWeight: "bold" },
       select: {
-        position: "absolute",
-        right: 0,
-        top: 10,
         color: "#141414",
         "&:hover:not(.Mui-disabled):before": {
           borderBottom: 0,
@@ -132,11 +129,11 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const Banner = (props: any) => {
   const classes = useStyles({});
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
 
-  // const handleLangChange = (lang: any) => {
-  //   props.changeLang(lang);
-  // };
+  const handleLangChange = (lang: any) => {
+    props.changeLang(lang);
+  };
 
   // const onClickAppStore = (e: any) => {
   //   e.preventDefault();
@@ -172,8 +169,38 @@ const Banner = (props: any) => {
     <div className={classes.containerOut}>
       <div className={classes.container}>
         <div className={classes.innerContainer}>
+          <Grid container justify="space-between" alignItems="center">
+            <Grid item>
+              <a href="https://www.bcc.kz/">
+                <img className={classes.logo} src="logo.svg" alt="BCC logo" />
+              </a>
+            </Grid>
+            <Grid item>
+              <Select
+                className={classes.select}
+                value={props.lang}
+                onChange={(e: any) => handleLangChange(e.target.value)}
+                inputProps={{
+                  classes: {
+                    icon: classes.icon,
+                  },
+                }}
+              >
+                <MenuItem value="ru">РУС</MenuItem>
+                <MenuItem value="kz">КАЗ</MenuItem>
+              </Select>
+            </Grid>
+          </Grid>
           <BccTypography type="h1" block className={classes.title}>
-            Растущий бизнес
+            {t("banner.title")}
+          </BccTypography>
+          <BccTypography
+            type="h3"
+            weight="normal"
+            block
+            className={classes.subTitle}
+          >
+            {t("banner.title_desc")}
           </BccTypography>
           <BccButton
             className={classes.openBtn}
@@ -181,7 +208,7 @@ const Banner = (props: any) => {
             color="primary"
             onClick={(e: any) => goToOnline(e)}
           >
-            Подать заявку
+            {t("banner.button")}
           </BccButton>
         </div>
       </div>

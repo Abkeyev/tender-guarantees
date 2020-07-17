@@ -45,19 +45,13 @@
     "repeat": "Repeat"
   },
   "benefits": {
-    "title": "Advantages",
-    "1": "Online account opening for free",
-    "1text": "Open account online for free, without visiting bank outlet",
-    "2": "“Internet Banking” system",
-    "2text": "Free connection to the Internet Banking system",
-    "3": "StarBusiness",
-    "3text": "Free connection and usage of the mobile application “StarBusiness”",
-    "4": "Minimum documents",
-    "4text": "Minimum package of documents for opening an account",
-    "5": "Online Currency Conversion",
-    "5text": "Online currency conversion at an exchange rate in real time without commission",
-    "6": "Personal manager",
-    "6text": "Qualified consultations of personal managers"
+    "title": "Преимущества",
+    "1": "Выпуск тендерных гарантий - от 20 минут",
+    "2": "Онлайн-получение тендерных гарантий",
+    "3": "Без залога под обороты в любом банке",
+    "4": "Минимальный пакет документов",
+    "5": "Гибкий подход к обеспечению",
+    "6": "Возможность оформления и выпуска в других регионах Казахстана"
   },
   "order": {
     "title": "Get a consultation",
