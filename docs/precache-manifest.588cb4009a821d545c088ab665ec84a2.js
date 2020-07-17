@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "704faccf612d3feafd03345742498f07",
+    "revision": "2eebd8a28768db099e339813fb1754f6",
     "url": "/tender-guarantees/index.html"
   },
   {
