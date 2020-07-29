@@ -11,6 +11,7 @@ import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 import MaskedInput from "react-maskedinput";
 import { Alert as MuiAlert } from "@material-ui/lab";
 import { useTranslation } from "react-i18next";
+import BlockUi from "react-block-ui";
 const webConfigEnv = (window as any).env;
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -247,10 +248,23 @@ const Order = (props: any) => {
   const { t } = useTranslation();
   const [fio, setFio] = React.useState("");
   const [phone, setPhone] = React.useState("");
-  const [city, setCity] = React.useState("");
+  const [step, setStep] = React.useState(0);
   const [iin, setIin] = React.useState("");
+  const [city, setCity] = React.useState("");
+  const [isLoading, setLoading] = React.useState(false);
+  const [phoneError, setPhoneError] = React.useState<boolean>(false);
   const [openError, setOpenError] = React.useState(false);
-  const [agree, setAgree] = React.useState<boolean>(true);
+  const [code, setCode] = React.useState("");
+  const [timer, setTimer] = React.useState(0);
+
+  React.useEffect(() => {
+    let timeOut = setInterval(() => {
+      if (timer !== 0) {
+        setTimer(timer - 1);
+      }
+    }, 1000);
+    return () => clearInterval(timeOut);
+  }, [timer]);
 
   const formatPhoneNumber = () => {
     let res = phone;
@@ -263,8 +277,7 @@ const Order = (props: any) => {
       fio.length > 1 &&
       city &&
       iin.length === 12 &&
-      phone.replace("_", "").length === 16 &&
-      agree
+      phone.replace("_", "").length === 16
     );
   };
 
@@ -272,152 +285,308 @@ const Order = (props: any) => {
     setOpenError(false);
   };
 
+  const startProcess = () => {
+    api.camunda
+      .start({
+        env: {
+          production: webConfigEnv.PRODUCTION === "1",
+        },
+        client: {
+          fio: fio,
+          iin: iin,
+          phone: formatPhoneNumber(),
+        },
+      })
+      .then((res: any) => {
+        setStep(2);
+        setLoading(false);
+      })
+      .catch((e: any) => {
+        console.error(e);
+        setOpenError(true);
+        setLoading(false);
+      });
+  };
+
+  const getOtp = () => {
+    if (phone.substr(2, 1) !== "7") {
+      setPhoneError(true);
+      return;
+    } else setPhoneError(false);
+    setStep(1);
+    setLoading(true);
+    setTimer(90);
+    api.authOtp
+      .sendOtp({ iin: iin, phone: formatPhoneNumber() })
+      .then(() => {
+        localStorage.removeItem("userContext");
+        setLoading(false);
+      })
+      .catch((e: any) => {
+        console.error(e);
+        setOpenError(true);
+        setLoading(false);
+      });
+  };
+
+  const onSubmitOtp = () => {
+    setLoading(true);
+    api.authOtp
+      .confirmOtp({
+        iin: iin,
+        phone: formatPhoneNumber(),
+        otp: code,
+      })
+      .then((userContext) => {
+        localStorage.setItem("userContext", JSON.stringify(userContext));
+        startProcess();
+      })
+      .catch((e: any) => {
+        console.error(e);
+        setOpenError(true);
+        setLoading(false);
+      });
+  };
+
+  const onReSend = () => {
+    setLoading(true);
+    api.authOtp
+      .sendOtp({ iin: iin, phone: formatPhoneNumber() })
+      .then(() => {
+        setTimer(90);
+        setCode("");
+        setLoading(false);
+      })
+      .catch((e: any) => {
+        console.error(e);
+        setOpenError(true);
+        setLoading(false);
+      });
+  };
+
   return (
     <div className={classes.outerContainer} ref={props.refProp}>
       <div className={classes.container}>
+        <Snackbar
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "center",
+          }}
+          open={openError}
+          autoHideDuration={6000}
+          onClose={handleClose}
+        >
+          <Alert onClose={handleClose} severity="error">
+            Возникла непредвиденная ошибка!
+          </Alert>
+        </Snackbar>
         <div className={classes.orderForm}>
           <Grid direction="column" container className={classes.innerOrderForm}>
-            <Grid item>
-              <BccTypography
-                type="h2"
-                weight="medium"
-                block
-                className={classes.titleForm}
-              >
-                {t("order.title")}
-              </BccTypography>
-              <BccTypography
-                type="p1"
-                weight="medium"
-                block
-                className={classes.subTitleForm}
-              >
-                {t("order.subtitle")}
-              </BccTypography>
-            </Grid>
-            <Grid item>
-              <BccInput
-                className={classes.inputStyle}
-                fullWidth
-                label={t("order.fio") + "*"}
-                variant="filled"
-                id="fio"
-                name="fio"
-                value={fio}
-                onChange={(e: any) => setFio(e.target.value)}
-              />
-            </Grid>
-            <Grid item>
-              <BccInput
-                fullWidth={true}
-                className={classes.inputStyle}
-                label={t("order.iin") + "*"}
-                id="iin"
-                name="iin"
-                value={iin}
-                onChange={(e: any) =>
-                  setIin(e.target.value.replace(/\D/g, "").substr(0, 12))
-                }
-                variant="filled"
-              />
-            </Grid>
-            <Grid item>
-              <BccInput
-                variant="filled"
-                fullWidth
-                label={t("order.phone") + "*"}
-                onChange={(e: any) => setPhone(e.target.value)}
-                className={classes.inputStyle}
-                id="phone"
-                name="phone"
-                value={phone}
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                InputProps={{
-                  inputComponent: BccMaskedInput as any,
-                }}
-              />
-            </Grid>
-            <Grid item>
-              <BccInput
-                fullWidth={true}
-                className={classes.inputStyle}
-                label={t("order.city") + "*"}
-                id="city"
-                name="city"
-                value={city}
-                onChange={(e: any) => setCity(e.target.value)}
-                variant="outlined"
-                select
-              >
-                {cities.map((c) => (
-                  <MenuItem key={12} value={12}>
-                    {c}
-                  </MenuItem>
-                ))}
-              </BccInput>
-            </Grid>
-            {/* <Grid item>
-              <Grid
-                container
-                justify="space-between"
-                wrap="nowrap"
-                className={classes.checkboxText}
-              >
-                <Grid item>
-                  <BccCheckbox
-                    value="remember"
-                    color="primary"
-                    checked={agree}
-                    onChange={() => setAgree(!agree)}
-                  />
-                </Grid>
-                <Grid item>
-                  <BccTypography type="p3">
-                    Подтверждаю согласие на сбор и обработку персональных
-                    данных, включая получение информации и кредитного отчета с
-                    ТОО «Первое кредитное бюро» и ГБД ЮЛ.
-                  </BccTypography>
-                </Grid>
-              </Grid>
-            </Grid> */}
-            <Grid item>
-              <Grid container justify="space-between">
-                <Grid item className={classes.btnWrap}>
-                  <Grid container spacing={2}>
-                    <Grid item>
-                      <img
-                        src={process.env.PUBLIC_URL + "/safety.svg"}
-                        className={classes.icon}
-                        alt="order_security"
-                      />
-                    </Grid>
-                    <Grid
-                      item
-                      xl={true}
-                      lg={true}
-                      md={true}
-                      sm={true}
-                      xs={true}
+            <BlockUi tag="div" blocking={isLoading}>
+              {step === 0 ? (
+                <>
+                  <Grid item>
+                    <BccTypography
+                      type="h2"
+                      weight="medium"
+                      block
+                      className={classes.titleForm}
                     >
-                      <BccTypography type="p3" className={classes.garant}>
-                        {t("order.safety")}
-                      </BccTypography>
+                      {t("order.title")}
+                    </BccTypography>
+                    <BccTypography
+                      type="p1"
+                      weight="medium"
+                      block
+                      className={classes.subTitleForm}
+                    >
+                      {t("order.subtitle")}
+                    </BccTypography>
+                  </Grid>
+                  <Grid item>
+                    <BccInput
+                      className={classes.inputStyle}
+                      fullWidth
+                      label={t("order.fio") + "*"}
+                      variant="filled"
+                      id="fio"
+                      name="fio"
+                      value={fio}
+                      onChange={(e: any) => setFio(e.target.value)}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <BccInput
+                      fullWidth={true}
+                      className={classes.inputStyle}
+                      label={t("order.iin") + "*"}
+                      id="iin"
+                      name="iin"
+                      value={iin}
+                      onChange={(e: any) =>
+                        setIin(e.target.value.replace(/\D/g, "").substr(0, 12))
+                      }
+                      variant="filled"
+                    />
+                  </Grid>
+                  <Grid item>
+                    <BccInput
+                      variant="filled"
+                      fullWidth
+                      label={t("order.phone") + "*"}
+                      onChange={(e: any) => setPhone(e.target.value)}
+                      className={classes.inputStyle}
+                      id="phone"
+                      name="phone"
+                      value={phone}
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      InputProps={{
+                        inputComponent: BccMaskedInput as any,
+                      }}
+                    />
+                  </Grid>
+                  <Grid item>
+                    <BccInput
+                      fullWidth={true}
+                      className={classes.inputStyle}
+                      label={t("order.city") + "*"}
+                      id="city"
+                      name="city"
+                      value={city}
+                      onChange={(e: any) => setCity(e.target.value)}
+                      variant="outlined"
+                      select
+                    >
+                      {cities.map((c) => (
+                        <MenuItem key={12} value={12}>
+                          {c}
+                        </MenuItem>
+                      ))}
+                    </BccInput>
+                  </Grid>
+                  <Grid item>
+                    <Grid container justify="space-between">
+                      <Grid item className={classes.btnWrap}>
+                        <Grid container spacing={2}>
+                          <Grid item>
+                            <img
+                              src={process.env.PUBLIC_URL + "/safety.svg"}
+                              className={classes.icon}
+                              alt="order_security"
+                            />
+                          </Grid>
+                          <Grid
+                            item
+                            xl={true}
+                            lg={true}
+                            md={true}
+                            sm={true}
+                            xs={true}
+                          >
+                            <BccTypography type="p3" className={classes.garant}>
+                              {t("order.safety")}
+                            </BccTypography>
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                      <Grid item className={classes.btnWrap}>
+                        <BccButton
+                          variant="contained"
+                          disabled={!isValid()}
+                          onClick={() => getOtp()}
+                          color="primary"
+                        >
+                          {t("order.send")}
+                        </BccButton>
+                      </Grid>
                     </Grid>
                   </Grid>
+                </>
+              ) : step === 1 ? (
+                <>
+                  <Grid item>
+                    <BccTypography
+                      type="h2"
+                      weight="medium"
+                      block
+                      className={classes.titleForm}
+                    >
+                      Подтверждение номера телефона
+                    </BccTypography>
+                    <BccTypography
+                      type="p1"
+                      weight="medium"
+                      block
+                      className={classes.subTitleForm}
+                    >
+                      Введите полученный в SMS код для подтверждения контакта
+                    </BccTypography>
+                  </Grid>
+                  <Grid item>
+                    <Grid
+                      container
+                      style={{ marginTop: "15px", alignItems: "center" }}
+                      spacing={4}
+                    >
+                      <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
+                        <BccInput
+                          variant="outlined"
+                          className={classes.code}
+                          margin="normal"
+                          fullWidth
+                          id="code"
+                          name="code"
+                          value={code}
+                          onChange={(e: any) =>
+                            setCode(
+                              e.target.value.replace(/\D/g, "").substr(0, 6)
+                            )
+                          }
+                          label={"Код подтверждения"}
+                        />
+                      </Grid>
+                      <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
+                        <BccButton
+                          onClick={() => onSubmitOtp()}
+                          variant="contained"
+                          className={classes.submit}
+                          disabled={!isValid()}
+                        >
+                          Отправить
+                        </BccButton>
+                      </Grid>
+                      {timer !== 0 ? (
+                        <Grid item>
+                          <BccTypography type="p3" className={classes.timer}>
+                            Отправить ещё через ({timer})
+                          </BccTypography>
+                        </Grid>
+                      ) : (
+                        <Grid item>
+                          <BccButton
+                            variant="text"
+                            className={classes.linkReSendSms}
+                            onClick={() => onReSend()}
+                          >
+                            Отправить повторно
+                          </BccButton>
+                        </Grid>
+                      )}
+                    </Grid>
+                  </Grid>
+                </>
+              ) : (
+                <Grid item>
+                  <div className={classes.successForm}>
+                    <img src="success.svg" alt="" />
+                    <div>Ваша заявка успешно принята</div>
+                    <span>Наш менеджер свяжется с вами в ближайшее время</span>
+                  </div>
                 </Grid>
-                <Grid item className={classes.btnWrap}>
-                  <BccButton
-                    variant="contained"
-                    disabled={!isValid()}
-                    color="primary"
-                  >
-                    {t("order.send")}
-                  </BccButton>
-                </Grid>
-              </Grid>
-            </Grid>
+              )}
+            </BlockUi>
           </Grid>
         </div>
       </div>
