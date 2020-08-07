@@ -65,7 +65,14 @@ const useStyles = makeStyles((theme: Theme) =>
         marginTop: 95,
       },
       select: {
-        color: "#141414",
+        color: "#000D1A",
+        paddingLeft: 7,
+        fontSize: 14,
+        backgroundColor: "white",
+        borderRadius: 8,
+        "& > svg": {
+          color: "#000D1A",
+        },
         "&:hover:not(.Mui-disabled):before": {
           borderBottom: 0,
         },
@@ -110,7 +117,14 @@ const useStyles = makeStyles((theme: Theme) =>
       },
       openBtn: { minWidth: 300, fontSize: 18, fontWeight: "bold" },
       select: {
-        color: "#141414",
+        color: "#000D1A",
+        paddingLeft: 7,
+        fontSize: 14,
+        backgroundColor: "white",
+        borderRadius: 8,
+        "& > svg": {
+          color: "#000D1A",
+        },
         "&:hover:not(.Mui-disabled):before": {
           borderBottom: 0,
         },
