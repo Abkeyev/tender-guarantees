@@ -117,6 +117,9 @@ const useStyles = makeStyles((theme: Theme) =>
         "&::after, &::before": {
           borderBottom: 0,
         },
+        "& > div:focus": {
+          backgroundColor: "transparent",
+        },
       },
     },
     link: {
@@ -188,6 +191,7 @@ const Banner = (props: any) => {
               >
                 <MenuItem value="ru">РУС</MenuItem>
                 <MenuItem value="kz">КАЗ</MenuItem>
+                <MenuItem value="en">ENG</MenuItem>
               </Select>
             </Grid>
           </Grid>
