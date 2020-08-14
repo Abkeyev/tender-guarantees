@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7438eb6821809d7b14c02a59f520d155",
+    "revision": "9f49837c3be29792e78985723637b62e",
     "url": "/tender-guarantees/index.html"
   },
   {
-    "revision": "4f446db06778eaf4a745",
+    "revision": "6e90737b2625e6a730e2",
     "url": "/tender-guarantees/static/css/main.aa1da0c2.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/tender-guarantees/static/js/2.bf9f220f.chunk.js.LICENSE"
   },
   {
-    "revision": "4f446db06778eaf4a745",
-    "url": "/tender-guarantees/static/js/main.2dec2efc.chunk.js"
+    "revision": "6e90737b2625e6a730e2",
+    "url": "/tender-guarantees/static/js/main.c14456ed.chunk.js"
   },
   {
     "revision": "5089caf9c0466d6066c4",

@@ -343,7 +343,7 @@ const useStyles = makeStyles((theme: Theme) =>
     docs: {
       marginTop: 24,
       "& > div": {
-        width: "calc(50% - 20px)",
+        width: "calc(33% - 20px)",
         marginBottom: 40,
         display: "flex",
         flexWrap: "nowrap",
@@ -503,9 +503,27 @@ const Tabs = (props: any) => {
               <img src={process.env.PUBLIC_URL + "/icons/docFile.svg"} />
               <BccLink
                 target="_blank"
-                href="https://docs.google.com/document/d/1e1dV5eJsHGwK1g55nVI39Is51ONRJ3pd45GMk1KQLwQ/edit"
+                href="https://www.bcc.kz/thelist_kaz.pdf"
               >
-                {t("tabs.4_1")}
+                {t("tabs.4_1")} [KZ]
+              </BccLink>
+            </Grid>
+            <Grid item>
+              <img src={process.env.PUBLIC_URL + "/icons/docFile.svg"} />
+              <BccLink
+                target="_blank"
+                href="https://www.bcc.kz/thelist_rus.pdf"
+              >
+                {t("tabs.4_1")} [RU]
+              </BccLink>
+            </Grid>
+            <Grid item>
+              <img src={process.env.PUBLIC_URL + "/icons/docFile.svg"} />
+              <BccLink
+                target="_blank"
+                href="https://www.bcc.kz/thelist_eng.pdf"
+              >
+                {t("tabs.4_1")} [EN]
               </BccLink>
             </Grid>
           </Grid>
