@@ -26,7 +26,7 @@ function App() {
         changeLang={handleLangChange}
       />
       <Benefits />
-      <Tabs />
+      <Tabs lang={lang} />
       <Order refProp={orderRef} />
       <CallUs />
       <Footer />

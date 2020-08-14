@@ -503,27 +503,15 @@ const Tabs = (props: any) => {
               <img src={process.env.PUBLIC_URL + "/icons/docFile.svg"} />
               <BccLink
                 target="_blank"
-                href="https://www.bcc.kz/thelist_kaz.pdf"
+                href={
+                  props.lang === "ru"
+                    ? "https://www.bcc.kz/thelist_rus.pdf"
+                    : props.lang === "kz"
+                    ? "https://www.bcc.kz/thelist_kaz.pdf"
+                    : "https://www.bcc.kz/thelist_eng.pdf"
+                }
               >
-                {t("tabs.4_1")} [KZ]
-              </BccLink>
-            </Grid>
-            <Grid item>
-              <img src={process.env.PUBLIC_URL + "/icons/docFile.svg"} />
-              <BccLink
-                target="_blank"
-                href="https://www.bcc.kz/thelist_rus.pdf"
-              >
-                {t("tabs.4_1")} [RU]
-              </BccLink>
-            </Grid>
-            <Grid item>
-              <img src={process.env.PUBLIC_URL + "/icons/docFile.svg"} />
-              <BccLink
-                target="_blank"
-                href="https://www.bcc.kz/thelist_eng.pdf"
-              >
-                {t("tabs.4_1")} [EN]
+                {t("tabs.4_1")}
               </BccLink>
             </Grid>
           </Grid>
