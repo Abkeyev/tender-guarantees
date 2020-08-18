@@ -7,7 +7,7 @@ export class CamundaController {
     return server.post(
       `/process/start`,
       {
-        processDefinitionKey: "tender_guarantees",
+        processDefinitionKey: "tender_guarantees_callback",
         variables,
       },
       {
@@ -19,7 +19,7 @@ export class CamundaController {
     return server.post(
       `/process/start`,
       {
-        processDefinitionKey: "tender_guarantees",
+        processDefinitionKey: "tender_guarantees_callback",
         variables,
       },
       {
