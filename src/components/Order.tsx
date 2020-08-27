@@ -295,6 +295,7 @@ const Order = (props: any) => {
           fio: fio,
           iin: iin,
           phone: formatPhoneNumber(),
+          city: city,
         },
       })
       .then((res: any) => {
@@ -459,8 +460,8 @@ const Order = (props: any) => {
                       variant="outlined"
                       select
                     >
-                      {cities.map((c) => (
-                        <MenuItem key={12} value={12}>
+                      {cities.map((c, i) => (
+                        <MenuItem value={c} key={i}>
                           {c}
                         </MenuItem>
                       ))}
