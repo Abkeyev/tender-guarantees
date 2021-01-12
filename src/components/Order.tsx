@@ -13,6 +13,7 @@ import { Alert as MuiAlert } from "@material-ui/lab";
 import { useTranslation } from "react-i18next";
 import BlockUi from "react-block-ui";
 const webConfigEnv = (window as any).env;
+const data = require("../data.json");
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -88,6 +89,13 @@ const useStyles = makeStyles((theme: Theme) =>
       inputStyle: {
         marginBottom: 30,
         textAlign: "left",
+        "& p": {
+          fontSize: 14,
+          marginTop: 2,
+          opacity: 0.7,
+          padding: 0,
+          margin: 0,
+        },
       },
       checkboxText: {
         alignItems: "flex-start",
@@ -152,6 +160,13 @@ const useStyles = makeStyles((theme: Theme) =>
       inputStyle: {
         marginBottom: 30,
         textAlign: "left",
+        "& p": {
+          fontSize: 14,
+          marginTop: 2,
+          opacity: 0.7,
+          padding: 0,
+          margin: 0,
+        },
       },
       checkboxText: {
         marginBottom: 20,
@@ -177,6 +192,16 @@ const useStyles = makeStyles((theme: Theme) =>
     timer: {
       fontSize: 16,
       color: "#4D565F",
+    },
+    menuBranch: {
+      display: "block",
+      "& > p": {
+        fontSize: 14,
+        marginTop: 2,
+        opacity: 0.7,
+        padding: 0,
+        margin: 0,
+      },
     },
     linkReSendSms: {
       color: "#3F0259",
@@ -251,6 +276,7 @@ const Order = (props: any) => {
   const [step, setStep] = React.useState(0);
   const [iin, setIin] = React.useState("");
   const [city, setCity] = React.useState("");
+  const [branch, setBranch] = React.useState({});
   const [isLoading, setLoading] = React.useState(false);
   const [phoneError, setPhoneError] = React.useState<boolean>(false);
   const [openError, setOpenError] = React.useState(false);
@@ -276,6 +302,7 @@ const Order = (props: any) => {
     return (
       fio.length > 1 &&
       city &&
+      Object.keys(branch).length > 0 &&
       iin.length === 12 &&
       phone.replace("_", "").length === 16
     );
@@ -285,6 +312,15 @@ const Order = (props: any) => {
     setOpenError(false);
   };
 
+  function getUrlParameter(name: string) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+    var results = regex.exec(window.location.search);
+    return results === null
+      ? ""
+      : decodeURIComponent(results[1].replace(/\+/g, " "));
+  }
+
   const startProcess = () => {
     api.camunda
       .start({
@@ -292,10 +328,15 @@ const Order = (props: any) => {
           production: webConfigEnv.PRODUCTION === "1",
         },
         client: {
+          ...branch,
           fio: fio,
           iin: iin,
           phone: formatPhoneNumber(),
-          city: city,
+          utm_source: getUrlParameter("utm_source"),
+          utm_medium: getUrlParameter("utm_medium"),
+          utm_campaign: getUrlParameter("utm_campaign"),
+          utm_term: getUrlParameter("utm_term"),
+          utm_content: getUrlParameter("utm_content"),
         },
       })
       .then((res: any) => {
@@ -460,11 +501,47 @@ const Order = (props: any) => {
                       variant="outlined"
                       select
                     >
-                      {cities.map((c, i) => (
-                        <MenuItem value={c} key={i}>
-                          {c}
-                        </MenuItem>
-                      ))}
+                      {data
+                        .filter(
+                          (d: any, index: number, self: any) =>
+                            index ===
+                            self.findIndex((dd: any) => dd.city === d.city)
+                        )
+                        .map((c: any, i: number) => (
+                          <MenuItem value={c.city} key={i}>
+                            {c.city}
+                          </MenuItem>
+                        ))}
+                    </BccInput>
+                  </Grid>
+                  <Grid item>
+                    <BccInput
+                      fullWidth={true}
+                      className={classes.inputStyle}
+                      label={t("order.branch") + "*"}
+                      id="branch"
+                      name="branch"
+                      value={Object.keys(branch).length === 0 ? "" : branch}
+                      onChange={(e: any) => {
+                        console.log(e.target.value);
+                        setBranch(e.target.value);
+                      }}
+                      variant="outlined"
+                      select
+                    >
+                      {data
+                        .filter((d: any) => d.city === city)
+                        .map((c: any, i: number) => (
+                          <MenuItem
+                            value={c}
+                            key={i}
+                            className={classes.menuBranch}
+                          >
+                            {c.branch}
+                            <br />
+                            <p>{c.address}</p>
+                          </MenuItem>
+                        ))}
                     </BccInput>
                   </Grid>
                   <Grid item>

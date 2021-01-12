@@ -1,0 +1,800 @@
+[
+  {
+    "city": "Нур-Султан",
+    "fullName": "Жакупова Алия Сапаровна",
+    "email": "alia.zhakupova@bcc.kz",
+    "branch": "Отделение №0801",
+    "address": "пр.Кабанбай батыра 15/1 Бизнес Центр Q2. 6 этаж"
+  },
+  {
+    "city": "Нур-Султан",
+    "fullName": "Садыкова Марал Хамидулаевна",
+    "email": "maral.sadykova@bcc.kz",
+    "branch": "Отделение №0701",
+    "address": "ул. Иманова 11(Бизнес-центр \"НУРСАУЛЕТ\")"
+  },
+  {
+    "city": "Нур-Султан",
+    "fullName": "Молдабаева Айжан Толеубековна",
+    "email": "aizhan.moldabayeva@bcc.kz",
+    "branch": "Центральное отделение №0101",
+    "address": "АЛМАТЫ р-н, БАРАЕВА ул, дом 7"
+  },
+  {
+    "city": "Нур-Султан",
+    "fullName": "Маханова Жазира Мухтаровна",
+    "email": "zhazira.makhanova@bcc.kz",
+    "branch": "Отделение №0301",
+    "address": "МАНГИЛИК пр-кт, дом 19"
+  },
+  {
+    "city": "Нур-Султан",
+    "fullName": "Муханова Жулдыз Савитовна",
+    "email": "zhuldyz.mukhanova@bcc.kz",
+    "branch": "Отделение №1001",
+    "address": "УЛ.БЕЙБИТШИЛИК, Д. 23."
+  },
+  {
+    "city": "Нур-Султан",
+    "fullName": "Молдиярова Кымбат Ельтаевна",
+    "email": "kymbat.moldiyarova@bcc.kz",
+    "branch": "Отделение №0201",
+    "address": "пр.Кабанбай Батыра, 15А (уг.ул. Сарайшык), Бизнес Центр \"Q\""
+  },
+  {
+    "city": "Нур-Султан",
+    "fullName": "Калдыбаева Балгуль Куанышевна",
+    "email": "balgul.kaldybayeva@bcc.kz",
+    "branch": "Отделение №0401",
+    "address": "пр. Богенбай Батыра д 54-ВП-10"
+  },
+  {
+    "city": "Нур-Султан",
+    "fullName": "Есеналина Анара Ольжабаевна",
+    "email": "anara.esenalina@bcc.kz",
+    "branch": "Отделение №0501",
+    "address": "пр.Тауелсіздік, 16/1"
+  },
+  {
+    "city": "Нур-Султан",
+    "fullName": "Доскенова Венера Сапаровна",
+    "email": "venera.doskenova@bcc.kz",
+    "branch": "Отделение №0601",
+    "address": "ул. Бараева, 16"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Икрамова Тұнықжан Байділдаханқызы",
+    "email": "tunykzhan.ikramova@bcc.kz",
+    "branch": "Отделение №1102",
+    "address": "ПР. АБЫЛАЙ ХАНА, 7"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Габдрахманова Анель Габдуллаевна",
+    "email": "anel.gabdrakhmanova@bcc.kz",
+    "branch": "Отделение №0202",
+    "address": "ул.Богенбай батыра 156, уг.ул.Сейфуллина"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Заитова Захидам Курбанджановна",
+    "email": "zakhidam.zaitova@bcc.kz",
+    "branch": "Отделение №0302",
+    "address": "ул. Р.Зорге, 16а"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Касенова Сауле Акимбековна",
+    "email": "saule.kassenova@bcc.kz",
+    "branch": "Отделение №0402",
+    "address": "ул. Толе би 143а"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Рахимова Айману Султановна",
+    "email": "aimanu.rahimova@bcc.kz",
+    "branch": "Отделение №0502",
+    "address": "ул. Тимирязева, дом 42"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Моисеенко Елена Николаевна",
+    "email": "Elena.Moiseenko@bcc.kz",
+    "branch": "Отделение №0602",
+    "address": "мкр-н Аксай-2, д. 9 А, помещение 46 - 47."
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Шопшекбаев Маратхан",
+    "email": "marat.shopshekbaev@bcc.kz",
+    "branch": "Отделение №0702",
+    "address": "пр-т Рыскулова, 95"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Байсеитова Айман Рымбековна",
+    "email": "abayseit@bcc.kz",
+    "branch": "Отделение №0802",
+    "address": "Аль-Фараби 19. Компл.Нурлытау.Корпус 1Б.Офис 1/2"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Шевлякова Ирина Анатольевна",
+    "email": "Irina.Shevlyakova@bcc.kz",
+    "branch": "Отделение №0902",
+    "address": "пр. Нурсултан Назарбаев, д. 65"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Асубаева Алия Абилкасымовна",
+    "email": "aliya.assubayeva@bcc.kz",
+    "branch": "Отделение №1002",
+    "address": "ул. Сатпаева, д.18 а/ уг. ул. Мира (в здании Казахстанско-Американского Университета)"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Мырзагалиева Бакытгуль Рамазановна",
+    "email": "bakytgul.myrzagalieva@bcc.kz",
+    "branch": "Отделение №1202",
+    "address": "АУЭЗОВСКИЙ р-н, ТОРАЙГЫРОВА ул, дом 53/23"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Жауарова Гульназ Анасовна",
+    "email": "Gulnaz.Zhauarova@bcc.kz",
+    "branch": "Отделение №1302",
+    "address": "ул.Пушкина, угол ул.Карасай батыра, 64/30"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Джанаева Алтын Нусупбаевна",
+    "email": "altyn.janayeva@bcc.kz",
+    "branch": "Отделение №1402",
+    "address": "ул.Шевченко, 140"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Ермаханова Айнур Амирбековна",
+    "email": "ainur.yermakhanova@bcc.kz",
+    "branch": "Центральное отделение №0102",
+    "address": "ПАНФИЛОВА ул, дом 98"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Рашева Галия Ерсериковна",
+    "email": "galiya.rasheva@bcc.kz",
+    "branch": "Отделение №1502",
+    "address": "мкр. Алгабас 1, д. 5/19"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Дюсембаева Асима Жексенбаевна",
+    "email": "assima.dyussembayeva@bcc.kz",
+    "branch": "Отделение №1602",
+    "address": "ул. Толе би 302 в здании ТОО \"Идил Аксу\""
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Исашева Рамина Аскаровна",
+    "email": "Ramina.Isasheva@bcc.kz",
+    "branch": "Отделение №1702",
+    "address": "ул.Шевченко 100 уг.ул. Сейфуллина"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Мырзалиева Гульмира Шыназбековна",
+    "email": "Gulmira.Myrzalieva@bcc.kz",
+    "branch": "Отделение №1802",
+    "address": "ул.Джандосова 1 уг.ул. Чапаева"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Самигулина Екатерина Вячеславовна",
+    "email": "Ekaterina.Samigulina@bcc.kz",
+    "branch": "Отделение №1902",
+    "address": "ул. Сауранбаева 4, ниже уг.ул.Шолохова"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Хусаинова Айман Каримовна",
+    "email": "aiman.khussainova@bcc.kz",
+    "branch": "Отделение №2002",
+    "address": "пр. Абая 151/115, в здании Бизнес Центр Алатау"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Рахимова Оксана Анатольевна",
+    "email": "oxana.rakhimova@bcc.kz",
+    "branch": "Отделение №2102",
+    "address": "Гагарина 244 \"а\" уг.ул. Ходжанова Магазин \"Строймарт\""
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Кобенбаева Толкын Шолпанбековна",
+    "email": "tolkyn.kobenbaeva@bcc.kz",
+    "branch": "Отделение №2202",
+    "address": "Кунаева, 1. уг.ул.Ташкентская"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Зульярова Гульвира Тудахуновна",
+    "email": "gulvira.zulyarova@bcc.kz",
+    "branch": "Отделение №2302",
+    "address": "Гоголя, 15"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Баймуратова Раушан Арыновна",
+    "email": "raushan.baymuratova@bcc.kz",
+    "branch": "Отделение №2402",
+    "address": "Розыбакиева, 111,уг.ул.Джандосова"
+  },
+  {
+    "city": "Алматы",
+    "fullName": "Тасыбаева Жанар Толепбергеновна",
+    "email": "zhanar.tassybaeyeva@bcc.kz",
+    "branch": "Отделение №2502",
+    "address": "проспект Аль-Фараби, 38, блок С"
+  },
+  {
+    "city": "Шымкент",
+    "fullName": "Исламов Даурен Абдисадикович",
+    "email": "dauren.islamov@bcc.kz",
+    "branch": "Центральное отделение №0117",
+    "address": "БАЙТУРСЫНОВА ул, дом 20А"
+  },
+  {
+    "city": "Шымкент",
+    "fullName": "Тойшубекова Асель Болатовна",
+    "email": "asel.toyshubekova@bcc.kz",
+    "branch": "Отделение №0317",
+    "address": "ЖАНГЕЛЬДИНА ул, дом 1"
+  },
+  {
+    "city": "Шымкент",
+    "fullName": "Сапаров Бахытжан Баймаханович",
+    "email": "bakhytzhan.saparov@bcc.kz",
+    "branch": "Отделение №0217",
+    "address": "ЕНБЕКШИНСКИЙ р-н, РЫСКУЛОВА ул, дом 22"
+  },
+  {
+    "city": "Шымкент",
+    "fullName": "Абдраханов Куаныш Бахытжанович",
+    "email": "kuanysh.abdrakhanov@bcc.kz",
+    "branch": "Отделение №0417",
+    "address": "ЕНБЕКШИНСКИЙ р-н, АЙМАУЫТОВА Ж ул, дом 143"
+  },
+  {
+    "city": "Шымкент",
+    "fullName": "Егембердиева Нурсулу Мейрбековна",
+    "email": "nursulu.yegemberdiyeva@bcc.kz",
+    "branch": "Отделение №0517",
+    "address": "АБАЙСКИЙ р-н, ЖИДЕЛИ БАЙСЫН ул, дом 92"
+  },
+  {
+    "city": "Актау",
+    "fullName": "Ондасинова Гаухар Дауылбаевна",
+    "email": "gaukhar.ondasinova@bcc.kz",
+    "branch": "Отделение №0212",
+    "address": "м-он 14, д. 58"
+  },
+  {
+    "city": "Актау",
+    "fullName": "Ахназарова Айгерим Шахановна",
+    "email": "aigerim.akhnazarova@bcc.kz",
+    "branch": "Отделение №0312",
+    "address": "Мангистауская обл. г.Жанаозен, мкр.Оркен, возле 45 жилого дома"
+  },
+  {
+    "city": "Актау",
+    "fullName": "Нығмет Мақсат Қуанғалиұлы",
+    "email": "maksat.nygmet@bcc.kz",
+    "branch": "Отделение №0412",
+    "address": "м-н 6, Здание РКО"
+  },
+  {
+    "city": "Актау",
+    "fullName": "Мухтарова Акжан Ерсайновна",
+    "email": "akzhan.mukhtarova@bcc.kz",
+    "branch": "Отделение №0512",
+    "address": "27 мкр., возле 39 дома, ТРЦ \"Байтерек\""
+  },
+  {
+    "city": "Актау",
+    "fullName": "Бөлтекова Камшат Әлімбайқызы",
+    "email": "kamshat.boltekova@bcc.kz",
+    "branch": "Центральное отделение №0112",
+    "address": "12 мкр, дом 12"
+  },
+  {
+    "city": "Актобе",
+    "fullName": "Шимифенинг Марина Юрьевна",
+    "email": "marina.shimifening@bcc.kz",
+    "branch": "Отделение №0204",
+    "address": "ул.Пацаева, д. 6"
+  },
+  {
+    "city": "Актобе",
+    "fullName": "Кулмагамбетова Жанара Амандыковна",
+    "email": "zhanara.kulmagambetova@bcc.kz",
+    "branch": "Отделение №0304",
+    "address": "ул. Шернияза, 45"
+  },
+  {
+    "city": "Актобе",
+    "fullName": "Кашанбаева Айгерим Бекарыстановна",
+    "email": "aygerim.kashanbaeva@bcc.kz",
+    "branch": "Отделение №0404",
+    "address": "ул.101 Стрелковой бригады, д. 5Г."
+  },
+  {
+    "city": "Актобе",
+    "fullName": "Орынгалиева Лимара Амангоскызы",
+    "email": "limara.oryngalieva@bcc.kz",
+    "branch": "Отделение №0504",
+    "address": "11 микр.д.3 ВГ"
+  },
+  {
+    "city": "Актобе",
+    "fullName": "Аимбетова Галия Руслановна",
+    "email": "galiya.aimbetova@bcc.kz",
+    "branch": "Центральное отделение №0104",
+    "address": "АЛИИ МОЛДАГУЛОВОЙ пр-кт, дом 30"
+  },
+  {
+    "city": "Атырау",
+    "fullName": "Издикова Гульнар Абдрахимовна",
+    "email": "gulnar.izdikova@bcc.kz",
+    "branch": "Отделение №0506",
+    "address": "Атырауская область, Жылыойский район, г.Кульсары, Ұлықпан Абдрахманова ул,стр 42 "
+  },
+  {
+    "city": "Атырау",
+    "fullName": "Тулешов Ахтияр Ахтанович",
+    "email": "akhtiyar.tuleshov@bcc.kz",
+    "branch": "Отделение №0206",
+    "address": "ул.Сатпаева, дом 8 \"А\" "
+  },
+  {
+    "city": "Атырау",
+    "fullName": "Сисенгалиева Жазира Марсельевна",
+    "email": "zhazira.sisengalieva@bcc.kz",
+    "branch": "Отделение №0306",
+    "address": "ул.Азаттык, 24 \"А\""
+  },
+  {
+    "city": "Атырау",
+    "fullName": "Такупов Ерлан Иватоллаевич",
+    "email": "erlan.takupov@bcc.kz",
+    "branch": "Отделение №0406",
+    "address": "АУЭЗОВА ул, дом 59А"
+  },
+  {
+    "city": "Атырау",
+    "fullName": "Жумабаев Нурбол Серикбаевич",
+    "email": "nurbol.zhumabaev@bcc.kz",
+    "branch": "Центральное отделение №0106",
+    "address": "АЗАТТЫК ул, дом 2"
+  },
+  {
+    "city": "Жезказган",
+    "fullName": "Попова Ольга Ивановна",
+    "email": "olga.popova@bcc.kz",
+    "branch": "Центральное отделение №0118",
+    "address": "МИРА ул, дом 26А"
+  },
+  {
+    "city": "Жезказган",
+    "fullName": "Молдагалиев Азамат Кайратович",
+    "email": "azamat.moldagaliev@bcc.kz",
+    "branch": "Отделение №0218",
+    "address": "г. Сатпаев пр. Сатпаева, д. 110"
+  },
+  {
+    "city": "Караганда",
+    "fullName": "Елисеева Татьяна Михайловна",
+    "email": "tatyana.yelisseyeva@bcc.kz",
+    "branch": "Отделение №0609",
+    "address": "г. Темиртау, пр. Металлургов, д. 8"
+  },
+  {
+    "city": "Караганда",
+    "fullName": "Султанова Салтанат Джахияевна",
+    "email": "saltanat.sultanova@bcc.kz",
+    "branch": "Отделение №0209",
+    "address": "ул. Строителей, д.25"
+  },
+  {
+    "city": "Караганда",
+    "fullName": "Гептинг Елена Сергеевна",
+    "email": "yelena.gepting@bcc.kz",
+    "branch": "Отделение №0309",
+    "address": "пр-т Н. Абдирова, д. 5"
+  },
+  {
+    "city": "Караганда",
+    "fullName": "Сатылганова Айжан Бактураровна",
+    "email": "aizhan.satylganova@bcc.kz",
+    "branch": "Отделение №0409",
+    "address": "ул.Гоголя,39"
+  },
+  {
+    "city": "Караганда",
+    "fullName": "Чирва Оксана Сергеевна",
+    "email": "oxana.chirva@bcc.kz",
+    "branch": "Отделение №0709",
+    "address": "г.Балхаш,ул.Караменди би, 4а"
+  },
+  {
+    "city": "Караганда",
+    "fullName": "Орлова Елена Андреевна",
+    "email": "yelena.orlova@bcc.kz",
+    "branch": "Отделение №0509",
+    "address": "пр.Ленина, 30"
+  },
+  {
+    "city": "Караганда",
+    "fullName": "Жумабаева Дана Кокеновна",
+    "email": "dana.zhumabaeva@bcc.kz",
+    "branch": "Центральное отделение №0109",
+    "address": "АЛИХАНОВА ул, дом 5"
+  },
+  {
+    "city": "Кокшетау",
+    "fullName": "Айдарханов Жасулан Султанахметович",
+    "email": "zhassulan.aidarkhanov@bcc.kz",
+    "branch": "Отделение №0303",
+    "address": "г. Степногорск, мкр. 4, пристройка к общежитию №6"
+  },
+  {
+    "city": "Кокшетау",
+    "fullName": "Козлов Максим Федорович",
+    "email": "maksim.kozlov@bcc.kz",
+    "branch": "Центральное отделение №0103",
+    "address": "АБАЯ ул, дом 142"
+  },
+  {
+    "city": "Кокшетау",
+    "fullName": "Жакиенова Дамира Кайратовна",
+    "email": "damira.zhakiyenova@bcc.kz",
+    "branch": "Отделение №0203",
+    "address": "ОСИПЕНКО ул, дом 1"
+  },
+  {
+    "city": "Костанай",
+    "fullName": "Исабаева Гульмира Умурзаковна",
+    "email": "gulmira.issabayeva@bcc.kz",
+    "branch": "Отделение №0310",
+    "address": "ул. Войнов-Интернационалистов, 12"
+  },
+  {
+    "city": "Костанай",
+    "fullName": "Байгильдинова Ляззат Айтпаевна",
+    "email": "lyazzat.baigildinova@bcc.kz",
+    "branch": "Центральное отделение №0110",
+    "address": "ТӘУЕЛСІЗДІК ул, дом 39"
+  },
+  {
+    "city": "Костанай",
+    "fullName": "Харитонова Елена Димухаметовна",
+    "email": "yelena.haritonova@bcc.kz",
+    "branch": "Отделение №0410",
+    "address": "РУДНЫЙ г, ГОРЬКОГО ул, дом 62"
+  },
+  {
+    "city": "Костанай",
+    "fullName": "Жусупова Айжан Ермековна",
+    "email": "aizhan.zhussupova@bcc.kz",
+    "branch": "Отделение №0210",
+    "address": "Н.НАЗАРБАЕВА пр-кт, дом 193"
+  },
+  {
+    "city": "Костанай",
+    "fullName": "Исмаканова Гульмира Сундетовна",
+    "email": "gulmira.ismakanova@bcc.kz",
+    "branch": "Отделение №0510",
+    "address": "Г. ТОБЫЛ, УЛ. ТӘУЕЛСІЗДІК, ЗД. 51"
+  },
+  {
+    "city": "Кызылорда",
+    "fullName": "Мусаева Индира Бектасовна",
+    "email": "indira.mussayeva@bcc.kz",
+    "branch": "Отделение №0311",
+    "address": "ГАНИ МУРАТБАЕВА ул, дом 1В"
+  },
+  {
+    "city": "Кызылорда",
+    "fullName": "Бекбанов Айбек Алтынбекович",
+    "email": "aibek.bekbanov@bcc.kz",
+    "branch": "Центральное отделение №0111",
+    "address": "н.п. 6А"
+  },
+  {
+    "city": "Кызылорда",
+    "fullName": "Ыдырысов Самат Бағдәулетұлы",
+    "email": "samat.ydyrysov@bcc.kz",
+    "branch": "Отделение №0211",
+    "address": "КЫЗЫЛОРДИНСКАЯ обл, ЧИИЛИЙСКИЙ р-н, ШИЕЛИ с, СЕЙФУЛЛИНА ул"
+  },
+  {
+    "city": "Кызылорда",
+    "fullName": "Нұрбаев Сұлтанмұрат Серікұлы",
+    "email": "sultanmurat.nurbaev@bcc.kz",
+    "branch": "Отделение №0411",
+    "address": ""
+  },
+  {
+    "city": "Кызылорда",
+    "fullName": "Оспанова Гульназ Куанышбековна",
+    "email": "gulnaz.ospanova@bcc.kz",
+    "branch": "Отделение №0511",
+    "address": ""
+  },
+  {
+    "city": "Павлодар",
+    "fullName": "Балбышкин Дмитрий Иванович",
+    "email": "dmitriy.balbyshkin@bcc.kz",
+    "branch": "Отделение №0314",
+    "address": "г. Экибастуз ул. Ауэзова, 51а"
+  },
+  {
+    "city": "Павлодар",
+    "fullName": "Кумарова Жанат Абаевна",
+    "email": "zhanat.kumarova@bcc.kz",
+    "branch": "Отделение №0214",
+    "address": "ТОРАЙГЫРОВА ул, дом 14"
+  },
+  {
+    "city": "Павлодар",
+    "fullName": "Нукешова Алма Сабитовна",
+    "email": "alma.nukeshova@bcc.kz",
+    "branch": "Центральное отделение №0114",
+    "address": "УЛ. АК. САТПАЕВА ул, дом ДОМ 156/1"
+  },
+  {
+    "city": "Петропавловск",
+    "fullName": "Казбаева Шолпан Бакитжановна",
+    "email": "sholpan.kazbaeva@bcc.kz",
+    "branch": "Отделение №0215",
+    "address": "ул. Интернациональная, д. 24"
+  },
+  {
+    "city": "Петропавловск",
+    "fullName": "Жакупова Алия Садуовна",
+    "email": "aliya.zhakupova@bcc.kz",
+    "branch": "Центральное отделение №0115",
+    "address": "АЛТЫНСАРИНА ул, дом 166"
+  },
+  {
+    "city": "Семей",
+    "fullName": "Жакишев Даурен Муратович",
+    "email": "dauren.zhakishev@bcc.kz",
+    "branch": "Отделение №0219",
+    "address": "ул. Иртышская, 11/101"
+  },
+  {
+    "city": "Семей",
+    "fullName": "Балтабеков Диас Сериктаевич",
+    "email": "dias.baltabekov@bcc.kz",
+    "branch": "Отделение №0319",
+    "address": "ул.Кабанбай Батыра, 40"
+  },
+  {
+    "city": "Семей",
+    "fullName": "Голушко Татьяна Викторовна",
+    "email": "tatyana.golushko@bcc.kz",
+    "branch": "Отделение №0419",
+    "address": "г. Шемонаиха, ул. Чапаева 53"
+  },
+  {
+    "city": "Семей",
+    "fullName": "Каймолдина Ляйля Талгатовна",
+    "email": "lyailya.kaimoldina@bcc.kz",
+    "branch": "Центральное отделение №0119",
+    "address": "АБАЯ КУНАНБАЕВА ул, дом 99 В"
+  },
+  {
+    "city": "Семей",
+    "fullName": "Касымбаева Динара Еркенбековна",
+    "email": "dinara.kassymbayeva@bcc.kz",
+    "branch": "Отделение №0519",
+    "address": "АЯГОЗ г, БУЛЬВАР АБАЯ ул, дом 24А"
+  },
+  {
+    "city": "Талдыкорган",
+    "fullName": "Бейсбекова Гульаим Далабаевна",
+    "email": "gulaim.beysbekova@bcc.kz",
+    "branch": "Отделение №0205",
+    "address": "ул.Кабанбай батыра 22 \"А\""
+  },
+  {
+    "city": "Талдыкорган",
+    "fullName": "Неверная Юлия Викторовна",
+    "email": "yuliya.nevernaya@bcc.kz",
+    "branch": "Отделение №0305",
+    "address": "ул Тауелсиздык 68"
+  },
+  {
+    "city": "Талдыкорган",
+    "fullName": "Бижигитова Айгуль Байсултановна",
+    "email": "aigul.bizhigitova@bcc.kz",
+    "branch": "Центральное отделение №0105",
+    "address": "АБЫЛАЙХАНА ул, дом стр 185"
+  },
+  {
+    "city": "Талдыкорган",
+    "fullName": "Жунисбеков Даниярбек Жумабекович",
+    "email": "daniyarbek.zhunisbekov@bcc.kz",
+    "branch": "Отделение №0505",
+    "address": "КАПЧАГАЙ г, 5 мкр, дом 18А"
+  },
+  {
+    "city": "Талдыкорган",
+    "fullName": "Куанышбаева Асель Турабатовна",
+    "email": "assel.kuanyshbayeva@bcc.kz",
+    "branch": "Отделение №0605",
+    "address": "ТАЛГАР г, КУНАЕВА ул, дом 83"
+  },
+  {
+    "city": "Талдыкорган",
+    "fullName": "Рыскулбекова Карлыгаш Куандыковна",
+    "email": "karlygash.ryskulbekova@bcc.kz",
+    "branch": "Отделение №0405",
+    "address": "ОТЕГЕН БАТЫРА п, БАТТАЛХАНОВА ул, дом 17"
+  },
+  {
+    "city": "Талдыкорган",
+    "fullName": "Измайлова Рената Александровна",
+    "email": "renata.izmailova@bcc.kz",
+    "branch": "Отделение №0705",
+    "address": "КАСКЕЛЕН г, АБЛАЙ ХАНА ул, дом 197"
+  },
+  {
+    "city": "Талдыкорган",
+    "fullName": "Хармысов Мурат Махамбетович",
+    "email": "murat.kharmysov@bcc.kz",
+    "branch": "Отделение №0805",
+    "address": "Г. ЖАРКЕНТ, УЛ. В. ЮЛДАШЕВА, Д. 28."
+  },
+  {
+    "city": "Тараз",
+    "fullName": "Исмаилова Индира Жанысбековна",
+    "email": "indira.ismailova@bcc.kz",
+    "branch": "Центральное отделение №0108",
+    "address": "КАЗЫБЕК БИ ул, дом 182"
+  },
+  {
+    "city": "Тараз",
+    "fullName": "Оспанова Лаура Болысбековна",
+    "email": "laura.ospanova@bcc.kz",
+    "branch": "Отделение №0208",
+    "address": "САМАЛ мкр, дом 31"
+  },
+  {
+    "city": "Тараз",
+    "fullName": "Рахимбаев Асет Бейбитович",
+    "email": "aset.rakhimbaev@bcc.kz",
+    "branch": "Отделение №0308",
+    "address": "Г. ШУ, УЛ. К. САТПАЕВ, Д. 42."
+  },
+  {
+    "city": "Туркестан",
+    "fullName": "Мустапаева Карина Юрьевна",
+    "email": "karina.mustapayeva@bcc.kz",
+    "branch": "Отделение №0213",
+    "address": "САРЫАГАШ г, ИСМАИЛОВА ул, дом Б/Н"
+  },
+  {
+    "city": "Туркестан",
+    "fullName": "Абдиваитов Каримкул Курваналиевич",
+    "email": "karimkul.abdivaitov@bcc.kz",
+    "branch": "Отделение №0313",
+    "address": "АКСУ с, ЖИБЕК ЖОЛЫ ул, дом 94"
+  },
+  {
+    "city": "Уральск",
+    "fullName": "Агедилова Асель Ермековна",
+    "email": "assel.agedilova@bcc.kz",
+    "branch": "Отделение №0407",
+    "address": "мкр-н Женис, 23"
+  },
+  {
+    "city": "Уральск",
+    "fullName": "Есеналиева Жазира Тюлюгалеевна",
+    "email": "zhazira.yessenaliyeva@bcc.kz",
+    "branch": "Отделение №0507",
+    "address": "С. Датова 21, ТД \"Променад\""
+  },
+  {
+    "city": "Уральск",
+    "fullName": "Нигметова Асель Алимжановна",
+    "email": "assel.nigmetova@bcc.kz",
+    "branch": "Отделение №0707",
+    "address": "г. Аксай, 4 мкр., д. 3/2"
+  },
+  {
+    "city": "Уральск",
+    "fullName": "Укубасова Слу Галиулловна",
+    "email": "slu.ukubassova@bcc.kz",
+    "branch": "Отделение №0607",
+    "address": "пр. Достык-Дружба, дом 216/1 H 1"
+  },
+  {
+    "city": "Уральск",
+    "fullName": "Ахметова Анаргуль Марсовна",
+    "email": "anargul.akhmetova@bcc.kz",
+    "branch": "Центральное отделение №0107",
+    "address": "МУХИТА ул, дом 27/2"
+  },
+  {
+    "city": "Уральск",
+    "fullName": "Мергалиева Дамира Каримжановна",
+    "email": "damira.mergalieva@bcc.kz",
+    "branch": "Отделение №0207",
+    "address": "м-он Строитель 2/4"
+  },
+  {
+    "city": "Уральск",
+    "fullName": "Кентасова Калампыр Шалабаевна",
+    "email": "kalampyr.kentassova@bcc.kz",
+    "branch": "Отделение №0307",
+    "address": "пр. Достык-Дружба, 184/1"
+  },
+  {
+    "city": "Усть-Каменогорск",
+    "fullName": "Нургазина Жанар Абусагитовна",
+    "email": "zhanar.nurgazina@bcc.kz",
+    "branch": "Отделение №0716",
+    "address": "г. Алтай, ул. Стахановская, 21/1"
+  },
+  {
+    "city": "Усть-Каменогорск",
+    "fullName": "Дубицкая Татьяна Евгеньевна",
+    "email": "tatyana.dubitskaya@bcc.kz",
+    "branch": "Отделение №0816",
+    "address": "г. Риддер, пр. Независимости, д. 17"
+  },
+  {
+    "city": "Усть-Каменогорск",
+    "fullName": "Кабдулина Жаннат Жанымхановна",
+    "email": "zhannat.kabdulina@bcc.kz",
+    "branch": "Отделение №0216",
+    "address": "пр. Шәкәрім д. 164 н.п. 7"
+  },
+  {
+    "city": "Усть-Каменогорск",
+    "fullName": "Нургалиева Жаннель Жумагалиевна",
+    "email": "zhannel.nurgalieva@bcc.kz",
+    "branch": "Отделение №0316",
+    "address": "ул.Виноградова, 18"
+  },
+  {
+    "city": "Усть-Каменогорск",
+    "fullName": "Колдаева Роза Оразбековна",
+    "email": "roza.koldaeva@bcc.kz",
+    "branch": "Отделение №0416",
+    "address": "ул. Утепова, 5"
+  },
+  {
+    "city": "Усть-Каменогорск",
+    "fullName": "Рахимбаева Кенжегуль Куандыковна",
+    "email": "kenzhegul.rakhimbaeva@bcc.kz",
+    "branch": "Отделение №0516",
+    "address": "ул. Кабанбай батыра, 91"
+  },
+  {
+    "city": "Усть-Каменогорск",
+    "fullName": "Нурсолтанова Назгул Сейткановна",
+    "email": "nazgul.nursoltanova@bcc.kz",
+    "branch": "Отделение №0616",
+    "address": "Зайсан г,ул.СПАМБЕТОВА ул, дом 12"
+  },
+  {
+    "city": "Усть-Каменогорск",
+    "fullName": "Атаева Рахима Темирхановна",
+    "email": "rakhima.ataeva@bcc.kz",
+    "branch": "Центральное отделение №0116",
+    "address": "ГОРЬКОГО ул, дом 19"
+  }
+]

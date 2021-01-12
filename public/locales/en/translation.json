@@ -38,6 +38,7 @@
     "fio": "Full name",
     "phone": "Telephone",
     "city": "City",
+    "branch": "Branch",
     "iin": "BIN/IIN",
     "safety": "We guarantee the safety and security of your data",
     "send": "Submit an application",
